@@ -1,0 +1,719 @@
+{
+  "entities": {
+    "PageSection": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "PageSection",
+      "type": "object",
+      "description": "Represents a configurable section of the website content, such as mission, introduction, or generic content blocks, managed via a CMS.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the PageSection entity."
+        },
+        "title": {
+          "type": "string",
+          "description": "The display title of the content section."
+        },
+        "slug": {
+          "type": "string",
+          "description": "A unique, URL-friendly identifier for the section, used to map it to a specific UI component (e.g., 'lab-mission', 'introduction')."
+        },
+        "content": {
+          "type": "string",
+          "description": "The main text content for the section, potentially including HTML or markdown."
+        },
+        "quote": {
+          "type": "string",
+          "description": "An optional notable quote associated with the section."
+        },
+        "quoteAuthor": {
+          "type": "string",
+          "description": "The author of the optional quote."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL to an optional image associated with the section, potentially for parallax backgrounds.",
+          "format": "uri"
+        },
+        "order": {
+          "type": "number",
+          "description": "A numeric value indicating the display order of the section on the page."
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "slug",
+        "content"
+      ]
+    },
+    "NewsItem": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "NewsItem",
+      "type": "object",
+      "description": "Represents a news article, event, or announcement to be displayed on the lab's website.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the NewsItem entity."
+        },
+        "title": {
+          "type": "string",
+          "description": "The headline or title of the news item."
+        },
+        "date": {
+          "type": "string",
+          "description": "The date when the news item was published or the event is scheduled.",
+          "format": "date-time"
+        },
+        "content": {
+          "type": "string",
+          "description": "The full body content or description of the news item."
+        },
+        "type": {
+          "type": "string",
+          "description": "The category of the news item (e.g., 'news', 'event', 'announcement')."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL to an optional image accompanying the news item.",
+          "format": "uri"
+        },
+        "externalLink": {
+          "type": "string",
+          "description": "An optional external link for more details about the news item or event.",
+          "format": "uri"
+        },
+        "author": {
+            "type": "string",
+            "description": "The author of the news item."
+        },
+        "location": {
+            "type": "string",
+            "description": "The location associated with the news item."
+        },
+        "imageId": {
+            "type": "string",
+            "description": "ID for a placeholder image from placeholder-images.json."
+        }
+      },
+      "required": [
+        "title",
+        "date",
+        "content",
+        "type"
+      ]
+    },
+    "HistoryMilestone": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "HistoryMilestone",
+      "type": "object",
+      "description": "Represents a significant event or achievement in the lab's history, displayed as part of a timeline.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the HistoryMilestone entity."
+        },
+        "year": {
+          "type": "number",
+          "description": "The year in which the milestone occurred."
+        },
+        "title": {
+          "type": "string",
+          "description": "A brief title describing the milestone."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the historical milestone."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL to an optional image related to the milestone.",
+          "format": "uri"
+        },
+        "imageId": {
+          "type": "string",
+          "description": "ID for a placeholder image from placeholder-images.json."
+        }
+      },
+      "required": [
+        "year",
+        "title",
+        "description"
+      ]
+    },
+    "Facility": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Facility",
+      "type": "object",
+      "description": "Represents a research facility or equipment available at the lab.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Facility entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the facility or equipment (e.g., 'Micro-chemistry Lab (1.11G)')."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the facility, its capabilities, and available equipment."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL to an optional image of the facility.",
+          "format": "uri"
+        },
+        "location": {
+          "type": "string",
+          "description": "The physical location of the facility within the lab or building."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description"
+      ]
+    },
+    "TeamMember": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "TeamMember",
+      "type": "object",
+      "description": "Represents a current or past member of the lab, including their profile and photo.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the TeamMember entity."
+        },
+        "firstName": {
+          "type": "string",
+          "description": "The first name of the team member."
+        },
+        "lastName": {
+          "type": "string",
+          "description": "The last name of the team member."
+        },
+        "order": {
+          "type": "number",
+          "description": "A number used for manual sorting of team members. Lower numbers appear first."
+        },
+        "role": {
+          "type": "string",
+          "description": "The role or position of the team member (e.g., 'Principal Investigator', 'Research Assistant')."
+        },
+        "bio": {
+          "type": "string",
+          "description": "A short biography of the team member."
+        },
+        "photoUrl": {
+          "type": "string",
+          "description": "URL to the team member's photo.",
+          "format": "uri"
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Indicates whether the team member is currently active in the lab."
+        },
+        "startDate": {
+          "type": "string",
+          "description": "The date when the team member joined the lab.",
+          "format": "date-time"
+        },
+        "endDate": {
+          "type": "string",
+          "description": "The date when the team member left the lab, if applicable.",
+          "format": "date-time"
+        },
+        "externalLink": {
+          "type": "string",
+          "description": "An optional external link for the team member (e.g., personal website, LinkedIn profile).",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "role",
+        "bio",
+        "photoUrl",
+        "isActive"
+      ]
+    },
+    "ResearchHighlight": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ResearchHighlight",
+      "type": "object",
+      "description": "Represents a key research highlight, discovery, or publication to be featured on the website.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the ResearchHighlight entity."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the research highlight."
+        },
+        "description": {
+          "type": "string",
+          "description": "A brief summary of the highlight."
+        },
+        "category": {
+          "type": "string",
+          "description": "A category for the highlight (e.g., 'Publication Highlight', 'Project Highlight')."
+        },
+        "link": {
+          "type": "string",
+          "description": "An external link for more details.",
+          "format": "uri"
+        },
+        "imageId": {
+          "type": "string",
+          "description": "ID for a placeholder image from placeholder-images.json."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL for an image for the highlight.",
+          "format": "uri"
+        },
+        "order": {
+          "type": "number",
+          "description": "A numeric value indicating the display order."
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "category"
+      ]
+    },
+    "Project": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Project",
+      "type": "object",
+      "description": "Represents a research project conducted by the lab, including its description and highlights.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Project entity."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the research project."
+        },
+        "description": {
+          "type": "string",
+          "description": "A brief description or summary of the project."
+        },
+        "startDate": {
+          "type": "string",
+          "description": "The start date of the project.",
+          "format": "date-time"
+        },
+        "endDate": {
+          "type": "string",
+          "description": "The estimated or actual end date of the project.",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "description": "The current status of the project (e.g., 'Ongoing', 'Completed', 'Archived')."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL to a supporting visual or image for the project.",
+          "format": "uri"
+        },
+        "externalLink": {
+          "type": "string",
+          "description": "An external link for more detailed information about the project.",
+          "format": "uri"
+        },
+        "fundingSource": {
+          "type": "string",
+          "description": "The source of funding for the project."
+        },
+        "fundingSourceUrl": {
+          "type": "string",
+          "description": "A URL to the funding source's website.",
+          "format": "uri"
+        },
+        "budget": {
+          "type": "number",
+          "description": "The total budget for the project."
+        },
+        "researchArea": {
+          "type": "string",
+          "description": "Keywords or a general category describing the research area of the project."
+        },
+        "teamMemberIds": {
+          "type": "array",
+          "description": "References to TeamMember entities involved in this project. (Relationship: Project N:N TeamMember)",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "startDate",
+        "status"
+      ]
+    },
+    "Publication": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Publication",
+      "type": "object",
+      "description": "Represents a scientific publication authored by lab members.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Publication entity."
+        },
+        "title": {
+          "type": "string",
+          "description": "The full title of the publication."
+        },
+        "authors": {
+          "type": "array",
+          "description": "An array of strings, each representing an author of the publication.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "year": {
+          "type": "number",
+          "description": "The year the publication was published."
+        },
+        "journal": {
+          "type": "string",
+          "description": "The name of the journal or conference where the publication was featured."
+        },
+        "journalLink": {
+          "type": "string",
+          "description": "A URL linking to the journal's homepage.",
+          "format": "uri"
+        },
+        "abstract": {
+          "type": "string",
+          "description": "The abstract or summary of the publication."
+        },
+        "doi": {
+          "type": "string",
+          "description": "The Digital Object Identifier (DOI) for the publication."
+        },
+        "externalLink": {
+          "type": "string",
+          "description": "A URL linking to the full text or publisher's page of the publication.",
+          "format": "uri"
+        },
+        "impactFactor": {
+            "type": "number",
+            "description": "The impact factor of the journal at the time of publication."
+        },
+        "keywords": {
+          "type": "array",
+          "description": "An array of keywords associated with the publication.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "teamMemberIds": {
+          "type": "array",
+          "description": "References to TeamMember entities from the lab who authored this publication. (Relationship: Publication N:N TeamMember)",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "title",
+        "authors",
+        "year",
+        "journal",
+        "abstract"
+      ]
+    },
+    "LabStatistic": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "LabStatistic",
+      "type": "object",
+      "description": "Stores key statistics and impact metrics for the lab.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the LabStatistic entity (e.g., 'lab-stats')."
+        },
+        "totalProjects": {
+          "type": "number",
+          "description": "The total number of research projects conducted."
+        },
+        "totalPublications": {
+          "type": "number",
+          "description": "The total number of publications produced by the lab."
+        },
+        "impactFactor": {
+          "type": "number",
+          "description": "The cumulative impact factor of the lab's publications."
+        },
+        "hirschIndex": {
+          "type": "number",
+          "description": "The Hirsch index (h-index) for the lab's research output."
+        },
+        "totalFunding": {
+          "type": "number",
+          "description": "The total research funding secured by the lab, in a common currency unit (e.g., USD)."
+        },
+        "lastUpdated": {
+          "type": "string",
+          "description": "The date and time when these statistics were last updated.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "totalProjects",
+        "totalPublications",
+        "impactFactor",
+        "hirschIndex",
+        "totalFunding",
+        "lastUpdated"
+      ]
+    },
+    "Opportunity": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Opportunity",
+      "type": "object",
+      "description": "Represents an open position, diploma thesis topic, or other opportunity to join or collaborate with the lab.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Opportunity entity."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the opportunity (e.g., 'Postdoc Position', 'Master Thesis Topic')."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the opportunity, including requirements and application instructions."
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of opportunity (e.g., 'Open Position', 'Diploma Thesis', 'Internship')."
+        },
+        "applicationDeadline": {
+          "type": "string",
+          "description": "The deadline for applications, if applicable.",
+          "format": "date-time"
+        },
+        "contactEmail": {
+          "type": "string",
+          "description": "An email address for inquiries about the opportunity.",
+          "format": "email"
+        },
+        "externalLink": {
+          "type": "string",
+          "description": "An optional external link to an application portal or more information.",
+          "format": "uri"
+        },
+        "postedDate": {
+          "type": "string",
+          "description": "The date when the opportunity was first posted.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "type",
+        "postedDate"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/page_sections/{pageSectionId}",
+        "definition": {
+          "entityName": "PageSection",
+          "schema": {
+            "$ref": "#/backend/entities/PageSection"
+          },
+          "description": "Stores public website content sections like mission, introduction, or general content blocks, managed by administrators. Includes fields like 'slug' for unique identification and 'order' for display sequencing.",
+          "params": [
+            {
+              "name": "pageSectionId",
+              "description": "Unique ID for the website section, often corresponding to its slug for easy retrieval."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/news_items/{newsItemId}",
+        "definition": {
+          "entityName": "NewsItem",
+          "schema": {
+            "$ref": "#/backend/entities/NewsItem"
+          },
+          "description": "Stores public news articles, events, and announcements for display on the lab's website, managed by administrators.",
+          "params": [
+            {
+              "name": "newsItemId",
+              "description": "Unique identifier for the news item."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/history_milestones/{milestoneId}",
+        "definition": {
+          "entityName": "HistoryMilestone",
+          "schema": {
+            "$ref": "#/backend/entities/HistoryMilestone"
+          },
+          "description": "Stores historical events and achievements of the lab for a timeline display, managed by administrators.",
+          "params": [
+            {
+              "name": "milestoneId",
+              "description": "Unique identifier for the history milestone."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/facilities/{facilityId}",
+        "definition": {
+          "entityName": "Facility",
+          "schema": {
+            "$ref": "#/backend/entities/Facility"
+          },
+          "description": "Stores descriptions and details of research facilities and equipment available at the lab, managed by administrators.",
+          "params": [
+            {
+              "name": "facilityId",
+              "description": "Unique identifier for the facility."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/team_members/{teamMemberId}",
+        "definition": {
+          "entityName": "TeamMember",
+          "schema": {
+            "$ref": "#/backend/entities/TeamMember"
+          },
+          "description": "Stores profiles of current and past lab members, including their bios and photos, managed by administrators.",
+          "params": [
+            {
+              "name": "teamMemberId",
+              "description": "Unique identifier for the team member."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/research_highlights/{highlightId}",
+        "definition": {
+          "entityName": "ResearchHighlight",
+          "schema": {
+            "$ref": "#/backend/entities/ResearchHighlight"
+          },
+          "description": "Stores featured research highlights for the website's carousel, managed by administrators.",
+          "params": [
+            {
+              "name": "highlightId",
+              "description": "Unique identifier for the research highlight."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/projects/{projectId}",
+        "definition": {
+          "entityName": "Project",
+          "schema": {
+            "$ref": "#/backend/entities/Project"
+          },
+          "description": "Stores details of research projects conducted by the lab, managed by administrators. Includes references to involved team members.",
+          "params": [
+            {
+              "name": "projectId",
+              "description": "Unique identifier for the research project."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/publications/{publicationId}",
+        "definition": {
+          "entityName": "Publication",
+          "schema": {
+            "$ref": "#/backend/entities/Publication"
+          },
+          "description": "Stores scientific publications authored by lab members, managed by administrators. Includes references to involved team members.",
+          "params": [
+            {
+              "name": "publicationId",
+              "description": "Unique identifier for the publication."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/lab_statistics/singleton",
+        "definition": {
+          "entityName": "LabStatistic",
+          "schema": {
+            "$ref": "#/backend/entities/LabStatistic"
+          },
+          "description": "Stores a single document containing key statistics and impact metrics for the lab, managed by administrators.",
+          "params": []
+        }
+      },
+      {
+        "path": "/opportunities/{opportunityId}",
+        "definition": {
+          "entityName": "Opportunity",
+          "schema": {
+            "$ref": "#/backend/entities/Opportunity"
+          },
+          "description": "Stores open positions, thesis topics, and collaboration opportunities with the lab, managed by administrators.",
+          "params": [
+            {
+              "name": "opportunityId",
+              "description": "Unique identifier for the opportunity."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/roles_admin/{userId}",
+        "definition": {
+          "entityName": "admin",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Dedicated collection for Database Access Control (DBAC) storing users with administrator roles. Existence of a document at this path for a given 'userId' grants administrative privileges across all CMS collections. This supports Authorization Independence and QAPs by making admin checks direct and explicit.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique Firebase Authentication UID of the user with administrative privileges."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The addition of `PageSection` entities for CMS management follows the established pattern for public-facing, administrator-managed content. The primary recommendation is to place all `PageSection` documents in a top-level collection named `/page_sections`. This structure adheres to the core design principles by ensuring robust security rules, scalability, and debuggability.\n\n**Authorization Independence:** Documents within `/page_sections` are designed to be entirely self-contained for authorization purposes. Each `PageSection` document contains all necessary data (`slug`, `order`, `content`, etc.) without requiring `get()` calls to parent documents to determine access rights. Since these are public-facing content, the authorization model is simple: `read` access for all users, and `write` access restricted to authenticated administrators. This eliminates any hierarchical dependencies, fulfilling the 'Authorization Independence' mandate and simplifying security rule evaluation.\n\n**QAPs (Rules are not Filters):** By segregating all `PageSection` documents into a single collection with a homogeneous security posture (publicly readable), `list` operations become inherently secure and efficient. Security rules can simply allow read access to `/page_sections/{pageSectionId}` for `request.auth != null` (or even `true` for truly public anonymous read) and `write` access for authenticated administrators. This prevents the need for complex `where` clauses in rules to filter data, thereby supporting Query-as-Permission (QAP) principles. The structure avoids mixing data with different access requirements, allowing for clear and predictable rule sets. Administrator roles would be managed via a separate, dedicated `/roles_admin/{uid}` collection, enabling efficient DBAC (Database Access Control) without custom claims."
+  }
+}

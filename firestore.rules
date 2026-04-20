@@ -1,0 +1,100 @@
+/**
+ * Core Philosophy: This ruleset implements a "Public Read, Admin Write" security model,
+ * designed for a public-facing website managed by a Content Management System (CMS).
+ * All content is readable by the general public (including unauthenticated users),
+ * but all write operations (create, update, delete) are strictly reserved for
+ * any authenticated user.
+ *
+ * This approach is suitable for a single-administrator setup where any user who can
+ * sign in is considered an administrator.
+ *
+ * Key Security Decisions:
+ * - Public Read Access: All CMS content collections are world-readable to serve the website.
+ * - Authenticated-Only Writes: Write access is controlled by checking if a user is
+ *   signed in (request.auth != null). This is a simple and effective model for this app.
+ * - Default Deny: Any path not explicitly defined in these rules is inaccessible.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    //----------------------------------------------------------------------
+    // Helper Functions
+    //----------------------------------------------------------------------
+
+    /**
+     * Checks if the user is an administrator. For this application, any
+     * authenticated user is considered an admin.
+     */
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    //----------------------------------------------------------------------
+    // Admin & System Rules (HIGHEST PRIORITY)
+    //----------------------------------------------------------------------
+    
+    /**
+     * @description The roles_admin collection is no longer used for authorization
+     * in this simplified ruleset. This rule is left to prevent accidental creation
+     * but could be removed entirely.
+     */
+    match /roles_admin/{userId} {
+      allow read, write: if false;
+    }
+
+    /**
+     * @description Controls access to the single document for lab statistics.
+     * Publicly readable, admin writable.
+     */
+    match /lab_statistics/singleton {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    //----------------------------------------------------------------------
+    // Public CMS Collection Rules
+    //----------------------------------------------------------------------
+
+    // All public content collections follow a strict "Admin Write" model.
+    // This includes creating, updating, and deleting documents.
+    // Public read access is allowed for all collections.
+
+    match /page_sections/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /news_items/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /facilities/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /projects/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /publications/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /opportunities/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /research_highlights/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /history_milestones/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /team_members/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}
