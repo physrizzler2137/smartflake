@@ -120,6 +120,7 @@ export function ResearchHighlights() {
                   <div className="relative">
                     {image?.imageUrl && (
                       <div
+                        onClick={() => setOpenItem(openItem === `item-${item.id}` ? '' : `item-${item.id}`)}
                         className={cn(
                           "absolute z-20 rounded-md overflow-hidden transition-all duration-700 ease-in-out group-data-[state=closed]:cursor-pointer group-data-[state=closed]:hover:animate-pop-then-wiggle",
                           // When closed, it's a thumbnail on the top-left

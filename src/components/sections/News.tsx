@@ -117,6 +117,7 @@ export function News() {
                   <div className="relative">
                     {image?.imageUrl && (
                       <div
+                        onClick={() => setOpenItem(openItem === `item-${item.id}` ? '' : `item-${item.id}`)}
                         className={cn(
                           "absolute z-20 rounded-md overflow-hidden transition-all duration-700 ease-in-out group-data-[state=closed]:cursor-pointer group-data-[state=closed]:hover:animate-pop-then-wiggle",
                           "group-data-[state=closed]:top-6 group-data-[state=closed]:left-6 group-data-[state=closed]:w-28 group-data-[state=closed]:aspect-[16/9] group-data-[state=closed]:shadow-lg",

@@ -4,23 +4,17 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
 import { LogoText } from "../layout/LogoText";
-import { generateMegaProxyUrl } from "@/lib/mega-link";
 
 export function Hero() {
-  const videoUrl = generateMegaProxyUrl("https://mega.nz/file/LsgHTZQL#FXhdMehXPv5f8awTX99qgWrTPuNsGLqZMYWLXKbL4sg");
-  
   return (
-    <section id="home" className="relative min-h-screen flex flex-col text-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <video
-          src={videoUrl}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
+    <section id="home" className="relative w-full min-h-[100svh] lg:min-h-0 lg:aspect-[4/3] flex flex-col text-center overflow-hidden bg-black">
+      <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden pointer-events-none opacity-90">
+        <iframe
+          src="https://www.youtube.com/embed/iqKSzllmZ8A?autoplay=1&mute=1&loop=1&playlist=iqKSzllmZ8A&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          className="absolute h-[150%] aspect-video max-w-none"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60 z-10" />
       </div>
       
       {/* This container will hold the main content and grow to fill available space, pushing the button down */}
