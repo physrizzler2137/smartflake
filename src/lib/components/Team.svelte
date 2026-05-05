@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { fly, fade } from 'svelte/transition';
-  import { supabase } from '$lib/supabase';
+  import { pb } from '$lib/pocketbase';
   import { Users, GraduationCap, Camera, Loader2 } from 'lucide-svelte';
 
   interface TeamMember {
@@ -54,15 +54,12 @@
   onMount(async () => {
     try {
       const [membersRes, photosRes] = await Promise.all([
-        supabase.from('team_members').select('*').order('display_order', { ascending: true }),
-        supabase.from('group_photos').select('*').order('year', { ascending: false })
+        pb.collection('team_members').getFullList({ sort: 'display_order' }),
+        pb.collection('group_photos').getFullList({ sort: '-year' })
       ]);
       
-      if (membersRes.error) throw membersRes.error;
-      if (photosRes.error) throw photosRes.error;
-      
-      if (membersRes.data) members = membersRes.data;
-      if (photosRes.data) groupPhotos = photosRes.data;
+      if (membersRes) members = membersRes as unknown as TeamMember[];
+      if (photosRes) groupPhotos = photosRes as unknown as GroupPhoto[];
     } catch (e) {
       console.error("Error fetching team data:", e);
     } finally {

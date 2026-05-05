@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
-  import { supabase } from '$lib/supabase';
+  import { pb } from '$lib/pocketbase';
   import { Newspaper, ChevronUp, ChevronLeft, ChevronRight, CalendarDays, MapPin, User, Loader2 } from 'lucide-svelte';
   import { fade, slide, fly } from 'svelte/transition';
   import { cn } from '$lib/utils';
@@ -25,14 +25,9 @@
   async function fetchNews() {
     isLoading = true;
     try {
-      const { data, error } = await supabase
-        .from('news_items')
-        .select('*')
-        .order('date', { ascending: false });
-      
-      if (error) {
-        console.error('Supabase query error:', error);
-      }
+      const data = await pb.collection('news_items').getFullList({
+        sort: '-date',
+      });
       
       if (data) {
         news = data.map(item => {

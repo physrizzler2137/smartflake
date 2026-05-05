@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { supabase } from '$lib/supabase';
+  import { pb } from '$lib/pocketbase';
   import { goto } from '$app/navigation';
   import { 
     Newspaper, Sparkles, Milestone, Users, Lightbulb, BookOpen, 
@@ -49,17 +49,16 @@
 
   // ─── Auth ─────────────────────────────────────────────────────────────────────
   onMount(async () => {
-    const { data: { session } } = await supabase.auth.getSession();
-    if (!session) {
+    if (!pb.authStore.isValid) {
       goto('/login');
       return;
     }
-    user = session.user;
+    user = pb.authStore.model;
     isCheckingAuth = false;
   });
 
   async function handleLogout() {
-    await supabase.auth.signOut();
+    pb.authStore.clear();
     goto('/login');
   }
 
@@ -73,18 +72,17 @@
     isLoadingTile = true;
     
     try {
-      let query = supabase.from(tileId).select('*');
+      let sortConfig = '';
       
       // Ordering per table
-      if (tileId === 'news_items') query = query.order('date', { ascending: false });
-      else if (tileId === 'research_highlights') query = query.order('display_order', { ascending: true });
-      else if (tileId === 'history_milestones') query = query.order('year', { ascending: true });
-      else if (tileId === 'team_members') query = query.order('display_order', { ascending: true });
-      else if (tileId === 'projects') query = query.order('start_date', { ascending: false });
-      else if (tileId === 'publications') query = query.order('year', { ascending: false });
+      if (tileId === 'news_items') sortConfig = '-date';
+      else if (tileId === 'research_highlights') sortConfig = 'display_order';
+      else if (tileId === 'history_milestones') sortConfig = 'year';
+      else if (tileId === 'team_members') sortConfig = 'display_order';
+      else if (tileId === 'projects') sortConfig = '-start_date';
+      else if (tileId === 'publications') sortConfig = '-year';
 
-      const { data, error } = await query;
-      if (error) throw error;
+      const data = await pb.collection(tileId).getFullList({ sort: sortConfig });
       cmsData[tileId] = data ?? [];
     } catch (e: any) {
       showNotification('error', `Failed to load ${tileId}: ${e.message}`);
@@ -96,12 +94,12 @@
   async function deleteRow(tileId: string, rowId: string) {
     if (!confirm('Are you sure you want to delete this entry? This cannot be undone.')) return;
     
-    const { error } = await supabase.from(tileId).delete().eq('id', rowId);
-    if (error) {
-      showNotification('error', `Delete failed: ${error.message}`);
-    } else {
+    try {
+      await pb.collection(tileId).delete(rowId);
       cmsData[tileId] = cmsData[tileId].filter(r => r.id !== rowId);
       showNotification('success', 'Entry deleted successfully.');
+    } catch (error: any) {
+      showNotification('error', `Delete failed: ${error.message}`);
     }
   }
 
@@ -125,15 +123,13 @@
     userCreateResult = null;
 
     try {
-      const { data, error } = await supabase.auth.signUp({
+      const data = await pb.collection('users').create({
         email: newUserEmail.trim(),
         password: newUserPassword,
-        options: {
-          data: { role: 'admin' }
-        }
+        passwordConfirm: newUserPassword,
+        role: 'admin'
       });
       
-      if (error) throw error;
       userCreateResult = `✓ User ${newUserEmail} created. They may need to confirm their email.`;
       newUserEmail = '';
       newUserPassword = '';
@@ -395,11 +391,11 @@
               <p class="text-xs text-muted-foreground">Preview the public-facing site</p>
             </div>
           </a>
-          <a href="https://supabase.com/dashboard/project/wmmbswlajfwahiaadtxc" target="_blank" rel="noopener noreferrer" 
+          <a href="http://127.0.0.1:8090/_/" target="_blank" rel="noopener noreferrer" 
             class="flex items-center gap-3 p-4 bg-card/40 border border-border/50 rounded-xl hover:border-primary/40 transition-all group">
             <Settings class="w-5 h-5 text-primary" />
             <div>
-              <p class="font-semibold text-sm">Supabase Dashboard</p>
+              <p class="font-semibold text-sm">PocketBase Dashboard</p>
               <p class="text-xs text-muted-foreground">Manage database directly</p>
             </div>
           </a>

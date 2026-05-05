@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { supabase } from '$lib/supabase';
+  import { pb } from '$lib/pocketbase';
   import { fade } from 'svelte/transition';
   import { tweened } from 'svelte/motion';
   import { cubicOut } from 'svelte/easing';
@@ -28,17 +28,14 @@
     (async () => {
       try {
       const [projectsRes, pubsRes] = await Promise.all([
-        supabase.from('projects').select('budget'),
-        supabase.from('publications').select('impact_factor')
+        pb.collection('projects').getFullList({ fields: 'budget' }),
+        pb.collection('publications').getFullList({ fields: 'impact_factor' })
       ]);
 
-      if (projectsRes.error) throw projectsRes.error;
-      if (pubsRes.error) throw pubsRes.error;
-
-      const pCount = projectsRes.data?.length || 0;
-      const pubCount = pubsRes.data?.length || 0;
-      const funding = projectsRes.data?.reduce((acc, p) => acc + (p.budget || 0), 0) || 0;
-      const impactFactor = pubsRes.data?.reduce((acc, p) => acc + (p.impact_factor || 0), 0) || 0;
+      const pCount = projectsRes?.length || 0;
+      const pubCount = pubsRes?.length || 0;
+      const funding = projectsRes?.reduce((acc, p) => acc + (p.budget || 0), 0) || 0;
+      const impactFactor = pubsRes?.reduce((acc, p) => acc + (p.impact_factor || 0), 0) || 0;
 
       // Intersection Observer to trigger animation
       const observer = new IntersectionObserver((entries) => {

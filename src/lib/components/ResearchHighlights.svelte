@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { supabase } from '$lib/supabase';
+  import { pb } from '$lib/pocketbase';
   import { Sparkles, ChevronUp, ChevronLeft, ChevronRight, ExternalLink, Loader2 } from 'lucide-svelte';
   import { slide } from 'svelte/transition';
 
@@ -16,12 +16,10 @@
   async function fetchHighlights() {
     isLoading = true;
     try {
-      const { data, error } = await supabase
-        .from('research_highlights')
-        .select('*')
-        .order('display_order', { ascending: true });
+      const data = await pb.collection('research_highlights').getFullList({
+        sort: 'display_order',
+      });
         
-      if (error) throw error;
       if (data) highlights = data;
     } catch (e) {
       console.error("Error fetching highlights:", e);

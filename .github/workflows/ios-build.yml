@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - snowflake
+      - pocketflake
   workflow_dispatch:
 
 permissions:

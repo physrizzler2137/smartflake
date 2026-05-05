@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Lock, ArrowLeft, Loader2, Eye, EyeOff } from 'lucide-svelte';
   import { fade, fly } from 'svelte/transition';
-  import { supabase } from '$lib/supabase';
+  import { pb } from '$lib/pocketbase';
   import { goto } from '$app/navigation';
 
   let email = $state('admin@smartlab.simr.pw.edu.pl');
@@ -16,27 +16,17 @@
     error = null;
 
     try {
-      const { data, error: authError } = await supabase.auth.signInWithPassword({
-        email: email.trim(),
-        password
-      });
+      const authData = await pb.collection('users').authWithPassword(email.trim(), password);
 
-      if (authError) {
-        if (authError.message === 'Invalid login credentials') {
-          error = 'Incorrect email or password. Please try again.';
-        } else if (authError.message.includes('Email not confirmed')) {
-          error = 'Please confirm your email address before signing in.';
-        } else {
-          error = authError.message;
-        }
-        return;
-      }
-
-      if (data.session) {
+      if (pb.authStore.isValid) {
         await goto('/admin');
       }
     } catch (e: any) {
-      error = e?.message || 'An unexpected error occurred. Please try again.';
+      if (e.message === 'Failed to authenticate.') {
+        error = 'Incorrect email or password. Please try again.';
+      } else {
+        error = e?.message || 'An unexpected error occurred. Please try again.';
+      }
     } finally {
       isLoading = false;
     }

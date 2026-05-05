@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount, tick } from 'svelte';
-  import { supabase } from '$lib/supabase';
+  import { pb } from '$lib/pocketbase';
   import { historyMilestones as staticMilestones } from '$lib/data';
   import { Milestone, X, ChevronLeft, ChevronRight, Loader2 } from 'lucide-svelte';
   import { fade, scale } from 'svelte/transition';
@@ -38,12 +38,10 @@
   onMount(async () => {
     // 1. Fetch data from Supabase
     try {
-      const { data, error } = await supabase
-        .from('history_milestones')
-        .select('*')
-        .order('year', { ascending: true });
+      const data = await pb.collection('history_milestones').getFullList({
+        sort: 'year',
+      });
         
-      if (error) throw error;
       if (data && data.length > 0) {
         historyMilestones = data;
       } else {

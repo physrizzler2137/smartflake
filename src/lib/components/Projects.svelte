@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { fade, fly } from 'svelte/transition';
-  import { supabase } from '$lib/supabase';
+  import { pb } from '$lib/pocketbase';
   import { Lightbulb, Calendar, Landmark, Banknote, ExternalLink, Loader2 } from 'lucide-svelte';
 
   interface Project {
@@ -22,13 +22,11 @@
 
   onMount(async () => {
     try {
-      const { data, error } = await supabase
-        .from('projects')
-        .select('*')
-        .order('start_date', { ascending: false });
+      const data = await pb.collection('projects').getFullList({
+        sort: '-start_date',
+      });
         
-      if (error) throw error;
-      if (data) projects = data;
+      if (data) projects = data as unknown as Project[];
     } catch (e) {
       console.error("Error fetching projects:", e);
     } finally {

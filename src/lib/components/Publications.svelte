@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { fly } from 'svelte/transition';
-  import { supabase } from '$lib/supabase';
+  import { pb } from '$lib/pocketbase';
   import { BookMarked, ExternalLink, Loader2 } from 'lucide-svelte';
 
   interface Publication {
@@ -37,13 +37,11 @@
 
   onMount(async () => {
     try {
-      const { data, error } = await supabase
-        .from('publications')
-        .select('*')
-        .order('year', { ascending: false });
+      const data = await pb.collection('publications').getFullList({
+        sort: '-year',
+      });
         
-      if (error) throw error;
-      if (data) publications = data;
+      if (data) publications = data as unknown as Publication[];
     } catch (e) {
       console.error("Error fetching publications:", e);
     } finally {
