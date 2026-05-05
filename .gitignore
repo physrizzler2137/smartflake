@@ -28,3 +28,5 @@ pictoolkit/mega_downloads/
 # Images: optimized web assets (regenerate via: python3 pictoolkit/optimize-images.py)
 static/img/
 src-tauri/target/
+
+.next/
