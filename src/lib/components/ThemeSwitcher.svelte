@@ -207,10 +207,10 @@
             <div class="rounded-xl border-2 transition-all p-4 bg-card {isActive ? 'border-primary shadow-lg ring-4 ring-primary/10' : 'border-border/50 hover:border-border'}">
               <h3 class="font-slab text-lg mb-4 text-center font-bold">{t.name}</h3>
               <div class="flex justify-center space-x-2 mb-6">
-                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.bg}" />
-                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.primary}" />
-                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.accent}" />
-                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.foreground}" />
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.bg}"></div>
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.primary}"></div>
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.accent}"></div>
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.foreground}"></div>
               </div>
               <button 
                 class="w-full py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2 {isActive ? 'bg-primary text-primary-foreground' : 'bg-muted/50 text-muted-foreground hover:bg-muted'}"

@@ -38,8 +38,4 @@
   </div>
 </section>
 
-<style>
-  :global(#home) {
-    /* Font handled by tailwind classes */
-  }
-</style>
+

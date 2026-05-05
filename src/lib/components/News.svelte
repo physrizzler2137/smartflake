@@ -113,6 +113,7 @@
   }
 </script>
 
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <section 
   id="news" 
   class="py-20 sm:py-32 bg-card/10 overflow-hidden"

@@ -76,7 +76,7 @@
 	</main>
 </div>
 
-<style>
+<style lang="postcss">
 	:global(h1), :global(h2), :global(h3), :global(h4), :global(h5), :global(h6) {
 		@apply font-headline;
 	}

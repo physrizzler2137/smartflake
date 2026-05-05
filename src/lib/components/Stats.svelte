@@ -24,8 +24,9 @@
   let hasAnimated = false;
   let sectionRef: HTMLElement;
 
-  onMount(async () => {
-    try {
+  onMount(() => {
+    (async () => {
+      try {
       const [projectsRes, pubsRes] = await Promise.all([
         supabase.from('projects').select('budget'),
         supabase.from('publications').select('impact_factor')
@@ -65,6 +66,7 @@
     } finally {
       isLoading = false;
     }
+    })();
 
     activeCoinIndex = Math.floor(Math.random() * 5);
     const interval = setInterval(() => {

@@ -205,6 +205,8 @@
         <h2 class="font-slab text-xl font-semibold mb-6 text-foreground/80">Content Management</h2>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {#each tiles as tile, i (tile.id)}
+            {@const Icon = tile.icon}
+            {@const ChevronIcon = activeTile === tile.id ? ChevronUp : ChevronDown}
             <button
               class="group relative flex flex-col items-center gap-3 p-5 rounded-2xl border transition-all duration-300 text-center
                 {activeTile === tile.id 
@@ -214,14 +216,14 @@
               in:fly={{ y: 20, duration: 400, delay: i * 60 }}
             >
               <div class="p-3 rounded-xl {tile.bg} transition-colors">
-                <svelte:component this={tile.icon} class="w-6 h-6 {tile.color}" />
+                <Icon class="w-6 h-6 {tile.color}" />
               </div>
               <div>
                 <p class="font-semibold text-sm text-foreground">{tile.label}</p>
                 <p class="text-xs text-muted-foreground mt-0.5 hidden sm:block">{tile.desc}</p>
               </div>
               <div class="absolute top-2 right-2">
-                <svelte:component this={activeTile === tile.id ? ChevronUp : ChevronDown} class="w-3.5 h-3.5 text-muted-foreground" />
+                <ChevronIcon class="w-3.5 h-3.5 text-muted-foreground" />
               </div>
             </button>
           {/each}
@@ -235,8 +237,9 @@
           <div class="flex items-center justify-between p-5 border-b border-border/50">
             <div class="flex items-center gap-3">
               {#if tile}
+                {@const Icon = tile.icon}
                 <div class="p-2 rounded-lg {tile.bg}">
-                  <svelte:component this={tile.icon} class="w-5 h-5 {tile.color}" />
+                  <Icon class="w-5 h-5 {tile.color}" />
                 </div>
                 <h3 class="font-slab font-bold text-lg">{tile.label}</h3>
               {/if}
@@ -335,8 +338,9 @@
             </h3>
             <div class="grid sm:grid-cols-2 gap-4 mb-4">
               <div class="space-y-1.5">
-                <label class="text-xs font-bold uppercase tracking-widest text-muted-foreground">Email Address</label>
+                <label for="newUserEmail" class="text-xs font-bold uppercase tracking-widest text-muted-foreground">Email Address</label>
                 <input
+                  id="newUserEmail"
                   type="email"
                   bind:value={newUserEmail}
                   placeholder="user@smartlab.simr.pw.edu.pl"
@@ -344,8 +348,9 @@
                 />
               </div>
               <div class="space-y-1.5">
-                <label class="text-xs font-bold uppercase tracking-widest text-muted-foreground">Initial Password</label>
+                <label for="newUserPassword" class="text-xs font-bold uppercase tracking-widest text-muted-foreground">Initial Password</label>
                 <input
+                  id="newUserPassword"
                   type="password"
                   bind:value={newUserPassword}
                   placeholder="Minimum 6 characters"

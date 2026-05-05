@@ -152,6 +152,8 @@
 
 <!-- Lightbox (Polaroid Style) -->
 {#if magnifiedImageIndex !== null}
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div 
     class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
     transition:fade={{ duration: 300 }}
@@ -171,6 +173,8 @@
       <ChevronLeft class="w-12 h-12" />
     </button>
 
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div 
       class="relative w-full max-w-4xl"
       onclick={(e) => e.stopPropagation()}

@@ -16,14 +16,14 @@
 
   function showNextImage() {
     if (magnifiedImageIndex === null) return;
-    const currentListIndex = imageMilestones.findIndex(m => m === historyMilestones[magnifiedImageIndex]);
+    const currentListIndex = imageMilestones.findIndex(m => m === historyMilestones[magnifiedImageIndex!]);
     const nextListIndex = (currentListIndex + 1) % imageMilestones.length;
     magnifiedImageIndex = historyMilestones.indexOf(imageMilestones[nextListIndex]);
   }
 
   function showPrevImage() {
     if (magnifiedImageIndex === null) return;
-    const currentListIndex = imageMilestones.findIndex(m => m === historyMilestones[magnifiedImageIndex]);
+    const currentListIndex = imageMilestones.findIndex(m => m === historyMilestones[magnifiedImageIndex!]);
     const prevListIndex = (currentListIndex - 1 + imageMilestones.length) % imageMilestones.length;
     magnifiedImageIndex = historyMilestones.indexOf(imageMilestones[prevListIndex]);
   }

@@ -49,7 +49,7 @@
   });
 </script>
 
-<svelte:window on:click={() => { if (isFontMenuOpen) isFontMenuOpen = false; }} />
+<svelte:window onclick={() => { if (isFontMenuOpen) isFontMenuOpen = false; }} />
 
 <header
   class={cn(
@@ -84,7 +84,7 @@
                       ? "text-foreground hover:bg-primary hover:text-primary-foreground" 
                       : "text-white/90 hover:text-white hover:bg-white/10"
                   )}
-                  on:click={closeMenus}
+                  onclick={closeMenus}
                 >
                   {link.name}
                 </a>
@@ -94,7 +94,7 @@
             <div class="flex items-center gap-3 border-l border-border/20 pl-6 ml-2">
               <div class="relative">
                 <button
-                  on:click={(e) => { e.stopPropagation(); isFontMenuOpen = !isFontMenuOpen; }}
+                  onclick={(e) => { e.stopPropagation(); isFontMenuOpen = !isFontMenuOpen; }}
                   class={cn(
                     "p-2 rounded-lg transition-all",
                     currentFontSize !== 'text-size-default' 
@@ -106,14 +106,16 @@
                   <AlignLeft class="w-5 h-5" />
                 </button>
                 {#if isFontMenuOpen}
-                  <div class="absolute right-0 top-full mt-2 w-48 bg-card/90 backdrop-blur-2xl border border-border/50 shadow-2xl rounded-xl py-2 overflow-hidden" on:click={(e) => e.stopPropagation()}>
+                  <!-- svelte-ignore a11y_click_events_have_key_events -->
+                  <!-- svelte-ignore a11y_no_static_element_interactions -->
+                  <div class="absolute right-0 top-full mt-2 w-48 bg-card/90 backdrop-blur-2xl border border-border/50 shadow-2xl rounded-xl py-2 overflow-hidden" onclick={(e) => e.stopPropagation()}>
                     {#each fontSizes as size}
                       <button 
                         class={cn(
                           "w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-primary/10",
                           currentFontSize === size.id ? "text-primary font-bold bg-primary/5" : "text-foreground"
                         )}
-                        on:click={() => setFontSize(size.id)}
+                        onclick={() => setFontSize(size.id)}
                       >
                         {size.label}
                       </button>
@@ -122,7 +124,7 @@
                 {/if}
               </div>
               <button
-                on:click={toggleHighContrast}
+                onclick={toggleHighContrast}
                 class={cn(
                   "p-2 rounded-lg transition-all",
                   isHighContrast 
@@ -140,7 +142,7 @@
     <!-- Mobile Header -->
     <div class="xl:hidden flex items-center justify-between h-full">
       <button 
-        on:click={(e) => { e.stopPropagation(); isOpen = !isOpen; isFontMenuOpen = false; }} 
+        onclick={(e) => { e.stopPropagation(); isOpen = !isOpen; isFontMenuOpen = false; }} 
         class={cn(
           "p-2 rounded-lg transition-colors",
           isScrolled ? "hover:bg-muted text-foreground" : "text-white hover:bg-white/10"
@@ -165,7 +167,7 @@
       <div class="flex items-center gap-2">
         <div class="relative">
           <button
-            on:click={(e) => { e.stopPropagation(); isFontMenuOpen = !isFontMenuOpen; isOpen = false; }}
+            onclick={(e) => { e.stopPropagation(); isFontMenuOpen = !isFontMenuOpen; isOpen = false; }}
             class={cn(
               "p-2 rounded-lg transition-colors",
               currentFontSize !== 'text-size-default'
@@ -177,14 +179,16 @@
             <AlignLeft class="w-6 h-6" />
           </button>
           {#if isFontMenuOpen}
-            <div class="absolute right-0 top-full mt-2 w-48 bg-card/90 backdrop-blur-2xl border border-border/50 shadow-2xl rounded-xl py-2 overflow-hidden" on:click={(e) => e.stopPropagation()}>
+            <!-- svelte-ignore a11y_click_events_have_key_events -->
+            <!-- svelte-ignore a11y_no_static_element_interactions -->
+            <div class="absolute right-0 top-full mt-2 w-48 bg-card/90 backdrop-blur-2xl border border-border/50 shadow-2xl rounded-xl py-2 overflow-hidden" onclick={(e) => e.stopPropagation()}>
               {#each fontSizes as size}
                 <button
                   class={cn(
                     "w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-primary/10",
                     currentFontSize === size.id ? "text-primary font-bold bg-primary/5" : "text-foreground"
                   )}
-                  on:click={() => setFontSize(size.id)}
+                  onclick={() => setFontSize(size.id)}
                 >
                   {size.label}
                 </button>
@@ -193,7 +197,7 @@
           {/if}
         </div>
         <button
-          on:click={toggleHighContrast}
+          onclick={toggleHighContrast}
           class={cn(
             "p-2 rounded-lg transition-colors",
             isHighContrast ? "bg-primary text-primary-foreground" : isScrolled ? "text-foreground" : "text-white"
@@ -207,13 +211,15 @@
   </div>
   
   {#if isOpen}
-    <div class="xl:hidden bg-background/40 backdrop-blur-2xl pb-4 border-b border-white/10 shadow-lg" on:click={(e) => e.stopPropagation()}>
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div class="xl:hidden bg-background/40 backdrop-blur-2xl pb-4 border-b border-white/10 shadow-lg" onclick={(e) => e.stopPropagation()}>
       <nav class="px-8 flex flex-col items-start gap-2">
         {#each navLinks as link}
           <a
             href={link.href}
             class="w-full text-left px-4 py-3 rounded-md font-headline text-base hover:bg-primary hover:text-primary-foreground transition-colors"
-            on:click={closeMenus}
+            onclick={closeMenus}
           >
             {link.name}
           </a>

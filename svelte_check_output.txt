@@ -1,0 +1,564 @@
+
+> smartlab-supa-website@0.1.5 check
+> svelte-kit sync && svelte-check --tsconfig ./tsconfig.json
+
+Loading svelte-check in workspace: /Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0
+Getting Svelte diagnostics...
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Facilities.svelte:155:3
+Warn: Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events (svelte)
+{#if magnifiedImageIndex !== null}
+  <div 
+    class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+    transition:fade={{ duration: 300 }}
+    onclick={() => magnifiedImageIndex = null}
+  >
+    <button 
+      class="absolute top-8 right-8 text-white/50 hover:text-white transition-colors"
+      onclick={() => magnifiedImageIndex = null}
+    >
+      <X class="w-10 h-10" />
+    </button>
+
+    <button 
+      class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors"
+      onclick={(e) => { e.stopPropagation(); showPrevImage(); }}
+    >
+      <ChevronLeft class="w-12 h-12" />
+    </button>
+
+    <div 
+      class="relative w-full max-w-4xl"
+      onclick={(e) => e.stopPropagation()}
+      in:scale={{ start: 0.95, duration: 300 }}
+    >
+      <!-- Polaroid Container -->
+      <div class="bg-white p-4 pb-20 sm:p-6 sm:pb-24 shadow-2xl rounded-sm transform rotate-1">
+        <div class="aspect-square w-full bg-neutral-100 overflow-hidden relative">
+          <img 
+            src={allEquipment[magnifiedImageIndex].parsedImageUrl} 
+            alt={allEquipment[magnifiedImageIndex].name}
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="absolute bottom-6 left-0 right-0 text-center">
+          <p class="font-serif italic text-xl sm:text-2xl text-neutral-800 px-4">
+            {@html allEquipment[magnifiedImageIndex].name}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <button 
+      class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors"
+      onclick={(e) => { e.stopPropagation(); showNextImage(); }}
+    >
+      <ChevronRight class="w-12 h-12" />
+    </button>
+  </div>
+{/if}
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Facilities.svelte:155:3
+Warn: `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions (svelte)
+{#if magnifiedImageIndex !== null}
+  <div 
+    class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+    transition:fade={{ duration: 300 }}
+    onclick={() => magnifiedImageIndex = null}
+  >
+    <button 
+      class="absolute top-8 right-8 text-white/50 hover:text-white transition-colors"
+      onclick={() => magnifiedImageIndex = null}
+    >
+      <X class="w-10 h-10" />
+    </button>
+
+    <button 
+      class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors"
+      onclick={(e) => { e.stopPropagation(); showPrevImage(); }}
+    >
+      <ChevronLeft class="w-12 h-12" />
+    </button>
+
+    <div 
+      class="relative w-full max-w-4xl"
+      onclick={(e) => e.stopPropagation()}
+      in:scale={{ start: 0.95, duration: 300 }}
+    >
+      <!-- Polaroid Container -->
+      <div class="bg-white p-4 pb-20 sm:p-6 sm:pb-24 shadow-2xl rounded-sm transform rotate-1">
+        <div class="aspect-square w-full bg-neutral-100 overflow-hidden relative">
+          <img 
+            src={allEquipment[magnifiedImageIndex].parsedImageUrl} 
+            alt={allEquipment[magnifiedImageIndex].name}
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="absolute bottom-6 left-0 right-0 text-center">
+          <p class="font-serif italic text-xl sm:text-2xl text-neutral-800 px-4">
+            {@html allEquipment[magnifiedImageIndex].name}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <button 
+      class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors"
+      onclick={(e) => { e.stopPropagation(); showNextImage(); }}
+    >
+      <ChevronRight class="w-12 h-12" />
+    </button>
+  </div>
+{/if}
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Facilities.svelte:174:5
+Warn: Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events (svelte)
+
+    <div 
+      class="relative w-full max-w-4xl"
+      onclick={(e) => e.stopPropagation()}
+      in:scale={{ start: 0.95, duration: 300 }}
+    >
+      <!-- Polaroid Container -->
+      <div class="bg-white p-4 pb-20 sm:p-6 sm:pb-24 shadow-2xl rounded-sm transform rotate-1">
+        <div class="aspect-square w-full bg-neutral-100 overflow-hidden relative">
+          <img 
+            src={allEquipment[magnifiedImageIndex].parsedImageUrl} 
+            alt={allEquipment[magnifiedImageIndex].name}
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="absolute bottom-6 left-0 right-0 text-center">
+          <p class="font-serif italic text-xl sm:text-2xl text-neutral-800 px-4">
+            {@html allEquipment[magnifiedImageIndex].name}
+          </p>
+        </div>
+      </div>
+    </div>
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Facilities.svelte:174:5
+Warn: `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions (svelte)
+
+    <div 
+      class="relative w-full max-w-4xl"
+      onclick={(e) => e.stopPropagation()}
+      in:scale={{ start: 0.95, duration: 300 }}
+    >
+      <!-- Polaroid Container -->
+      <div class="bg-white p-4 pb-20 sm:p-6 sm:pb-24 shadow-2xl rounded-sm transform rotate-1">
+        <div class="aspect-square w-full bg-neutral-100 overflow-hidden relative">
+          <img 
+            src={allEquipment[magnifiedImageIndex].parsedImageUrl} 
+            alt={allEquipment[magnifiedImageIndex].name}
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="absolute bottom-6 left-0 right-0 text-center">
+          <p class="font-serif italic text-xl sm:text-2xl text-neutral-800 px-4">
+            {@html allEquipment[magnifiedImageIndex].name}
+          </p>
+        </div>
+      </div>
+    </div>
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Hero.svelte:42:3
+Warn: Do not use empty rulesets (css)
+<style>
+  :global(#home) {
+    /* Font handled by tailwind classes */
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/History.svelte:19:85
+Error: Type 'null' cannot be used as an index type. (ts)
+    if (magnifiedImageIndex === null) return;
+    const currentListIndex = imageMilestones.findIndex(m => m === historyMilestones[magnifiedImageIndex]);
+    const nextListIndex = (currentListIndex + 1) % imageMilestones.length;
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/History.svelte:26:85
+Error: Type 'null' cannot be used as an index type. (ts)
+    if (magnifiedImageIndex === null) return;
+    const currentListIndex = imageMilestones.findIndex(m => m === historyMilestones[magnifiedImageIndex]);
+    const prevListIndex = (currentListIndex - 1 + imageMilestones.length) % imageMilestones.length;
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:87:19
+Warn: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+                  )}
+                  on:click={closeMenus}
+                >
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:97:19
+Warn: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+                <button
+                  on:click={(e) => { e.stopPropagation(); isFontMenuOpen = !isFontMenuOpen; }}
+                  class={cn(
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:109:19
+Warn: Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events (svelte)
+                {#if isFontMenuOpen}
+                  <div class="absolute right-0 top-full mt-2 w-48 bg-card/90 backdrop-blur-2xl border border-border/50 shadow-2xl rounded-xl py-2 overflow-hidden" on:click={(e) => e.stopPropagation()}>
+                    {#each fontSizes as size}
+                      <button 
+                        class={cn(
+                          "w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-primary/10",
+                          currentFontSize === size.id ? "text-primary font-bold bg-primary/5" : "text-foreground"
+                        )}
+                        on:click={() => setFontSize(size.id)}
+                      >
+                        {size.label}
+                      </button>
+                    {/each}
+                  </div>
+                {/if}
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:109:19
+Warn: `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions (svelte)
+                {#if isFontMenuOpen}
+                  <div class="absolute right-0 top-full mt-2 w-48 bg-card/90 backdrop-blur-2xl border border-border/50 shadow-2xl rounded-xl py-2 overflow-hidden" on:click={(e) => e.stopPropagation()}>
+                    {#each fontSizes as size}
+                      <button 
+                        class={cn(
+                          "w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-primary/10",
+                          currentFontSize === size.id ? "text-primary font-bold bg-primary/5" : "text-foreground"
+                        )}
+                        on:click={() => setFontSize(size.id)}
+                      >
+                        {size.label}
+                      </button>
+                    {/each}
+                  </div>
+                {/if}
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:109:164
+Warn: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+                {#if isFontMenuOpen}
+                  <div class="absolute right-0 top-full mt-2 w-48 bg-card/90 backdrop-blur-2xl border border-border/50 shadow-2xl rounded-xl py-2 overflow-hidden" on:click={(e) => e.stopPropagation()}>
+                    {#each fontSizes as size}
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:116:25
+Warn: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+                        )}
+                        on:click={() => setFontSize(size.id)}
+                      >
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:125:17
+Warn: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+              <button
+                on:click={toggleHighContrast}
+                class={cn(
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:143:9
+Warn: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+      <button 
+        on:click={(e) => { e.stopPropagation(); isOpen = !isOpen; isFontMenuOpen = false; }} 
+        class={cn(
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:168:13
+Warn: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+          <button
+            on:click={(e) => { e.stopPropagation(); isFontMenuOpen = !isFontMenuOpen; isOpen = false; }}
+            class={cn(
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:180:13
+Warn: Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events (svelte)
+          {#if isFontMenuOpen}
+            <div class="absolute right-0 top-full mt-2 w-48 bg-card/90 backdrop-blur-2xl border border-border/50 shadow-2xl rounded-xl py-2 overflow-hidden" on:click={(e) => e.stopPropagation()}>
+              {#each fontSizes as size}
+                <button
+                  class={cn(
+                    "w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-primary/10",
+                    currentFontSize === size.id ? "text-primary font-bold bg-primary/5" : "text-foreground"
+                  )}
+                  on:click={() => setFontSize(size.id)}
+                >
+                  {size.label}
+                </button>
+              {/each}
+            </div>
+          {/if}
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:180:13
+Warn: `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions (svelte)
+          {#if isFontMenuOpen}
+            <div class="absolute right-0 top-full mt-2 w-48 bg-card/90 backdrop-blur-2xl border border-border/50 shadow-2xl rounded-xl py-2 overflow-hidden" on:click={(e) => e.stopPropagation()}>
+              {#each fontSizes as size}
+                <button
+                  class={cn(
+                    "w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-primary/10",
+                    currentFontSize === size.id ? "text-primary font-bold bg-primary/5" : "text-foreground"
+                  )}
+                  on:click={() => setFontSize(size.id)}
+                >
+                  {size.label}
+                </button>
+              {/each}
+            </div>
+          {/if}
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:180:158
+Warn: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+          {#if isFontMenuOpen}
+            <div class="absolute right-0 top-full mt-2 w-48 bg-card/90 backdrop-blur-2xl border border-border/50 shadow-2xl rounded-xl py-2 overflow-hidden" on:click={(e) => e.stopPropagation()}>
+              {#each fontSizes as size}
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:187:19
+Warn: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+                  )}
+                  on:click={() => setFontSize(size.id)}
+                >
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:196:11
+Warn: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+        <button
+          on:click={toggleHighContrast}
+          class={cn(
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:210:5
+Warn: Visible, non-interactive elements with a click event must be accompanied by a keyboard event handler. Consider whether an interactive element such as `<button type="button">` or `<a>` might be more appropriate
+https://svelte.dev/e/a11y_click_events_have_key_events (svelte)
+  {#if isOpen}
+    <div class="xl:hidden bg-background/40 backdrop-blur-2xl pb-4 border-b border-white/10 shadow-lg" on:click={(e) => e.stopPropagation()}>
+      <nav class="px-8 flex flex-col items-start gap-2">
+        {#each navLinks as link}
+          <a
+            href={link.href}
+            class="w-full text-left px-4 py-3 rounded-md font-headline text-base hover:bg-primary hover:text-primary-foreground transition-colors"
+            on:click={closeMenus}
+          >
+            {link.name}
+          </a>
+        {/each}
+      </nav>
+    </div>
+  {/if}
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:210:5
+Warn: `<div>` with a click handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions (svelte)
+  {#if isOpen}
+    <div class="xl:hidden bg-background/40 backdrop-blur-2xl pb-4 border-b border-white/10 shadow-lg" on:click={(e) => e.stopPropagation()}>
+      <nav class="px-8 flex flex-col items-start gap-2">
+        {#each navLinks as link}
+          <a
+            href={link.href}
+            class="w-full text-left px-4 py-3 rounded-md font-headline text-base hover:bg-primary hover:text-primary-foreground transition-colors"
+            on:click={closeMenus}
+          >
+            {link.name}
+          </a>
+        {/each}
+      </nav>
+    </div>
+  {/if}
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:210:103
+Warn: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+  {#if isOpen}
+    <div class="xl:hidden bg-background/40 backdrop-blur-2xl pb-4 border-b border-white/10 shadow-lg" on:click={(e) => e.stopPropagation()}>
+      <nav class="px-8 flex flex-col items-start gap-2">
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Navigation.svelte:216:13
+Warn: Using `on:click` to listen to the click event is deprecated. Use the event attribute `onclick` instead
+https://svelte.dev/e/event_directive_deprecated (svelte)
+            class="w-full text-left px-4 py-3 rounded-md font-headline text-base hover:bg-primary hover:text-primary-foreground transition-colors"
+            on:click={closeMenus}
+          >
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/News.svelte:116:1
+Warn: `<section>` with a mouseenter or mouseleave handler must have an ARIA role
+https://svelte.dev/e/a11y_no_static_element_interactions (svelte)
+
+<section 
+  id="news" 
+  class="py-20 sm:py-32 bg-card/10 overflow-hidden"
+  onmouseenter={() => isHovering = true}
+  onmouseleave={() => isHovering = false}
+>
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="mb-16 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold font-slab text-primary mb-4 flex items-center justify-center gap-3">
+        <Newspaper class="w-8 h-8" />
+        Latest News
+      </h2>
+    </div>
+
+    {#if isLoading}
+      <div class="flex flex-col items-center justify-center py-20 gap-4">
+        <Loader2 class="w-10 h-10 animate-spin text-primary" />
+        <p class="text-sm font-mono uppercase tracking-widest text-muted-foreground">Synchronizing Archives...</p>
+      </div>
+    {:else if news.length === 0}
+      <div class="text-center bg-card/40 border border-border/50 p-12 rounded-2xl">
+        <p class="text-muted-foreground mb-4">No transmission records available at this time.</p>
+      </div>
+    {:else}
+      <div class="relative min-h-[400px] grid grid-cols-1 grid-rows-1">
+        {#key page}
+          <div 
+            class="space-y-6 col-start-1 row-start-1 w-full"
+            in:fly={{ x: animationDirection === 'left' ? 50 : -50, duration: 500 }}
+            out:fly={{ x: animationDirection === 'left' ? -50 : 50, duration: 300 }}
+          >
+            {#each currentNews as item}
+              <div class="group bg-card border border-border/50 rounded-xl shadow-lg hover:shadow-primary/5 transition-all duration-500 overflow-hidden">
+                <div class="relative">
+                  {#if item.imageUrl}
+                    <button 
+                      class={cn(
+                        "absolute z-20 rounded-lg overflow-hidden transition-all duration-700 ease-in-out cursor-pointer",
+                        openItem === item.id 
+                          ? "top-24 left-6 right-6 w-[calc(100%-3rem)] aspect-video shadow-2xl" 
+                          : "top-6 left-6 w-24 aspect-[4/3] shadow-md group-hover:scale-105"
+                      )}
+                      onclick={() => openItem = openItem === item.id ? null : item.id}
+                    >
+                      <img src={item.imageUrl} alt={item.title} class="w-full h-full object-cover" />
+                    </button>
+                  {/if}
+
+                  <button 
+                    class={cn(
+                      "w-full text-left p-6 transition-all duration-700 ease-in-out flex items-center justify-between",
+                      item.imageUrl && (openItem !== item.id ? "pl-36" : "pb-6")
+                    )}
+                    onclick={() => openItem = openItem === item.id ? null : item.id}
+                  >
+                    <div class="flex-1">
+                      <h3 class={cn("font-slab text-xl transition-colors", openItem === item.id ? "text-primary" : "text-foreground group-hover:text-primary")}>
+                        {@html item.title}
+                      </h3>
+                      <div class="flex flex-wrap items-center gap-4 mt-3 text-xs font-mono text-muted-foreground">
+                        <div class="flex items-center gap-1.5"><CalendarDays class="w-3.5 h-3.5 text-primary" /><span>{formatDate(item.date)}</span></div>
+                        {#if item.location}<div class="flex items-center gap-1.5"><MapPin class="w-3.5 h-3.5" /><span>{item.location}</span></div>{/if}
+                        {#if item.author}<div class="flex items-center gap-1.5"><User class="w-3.5 h-3.5" /><span>By {item.author}</span></div>{/if}
+                      </div>
+                    </div>
+                    <ChevronUp class={cn("w-5 h-5 transition-transform duration-500", openItem !== item.id && "rotate-180")} />
+                  </button>
+
+                  {#if openItem === item.id}
+                    <div class="px-6 pb-8" transition:slide={{ duration: 500 }}>
+                      <div class={cn(item.imageUrl && "mt-[calc(56.25%_+_1rem)]")}>
+                        <div class="pt-6 border-t border-border/50 text-muted-foreground text-justify leading-relaxed" in:fade={{ delay: 300 }}>
+                          {@html item.content}
+                        </div>
+                      </div>
+                    </div>
+                  {/if}
+                </div>
+              </div>
+            {/each}
+          </div>
+        {/key}
+      </div>
+
+      {#if totalPages > 1}
+        <div class="flex justify-center items-center mt-12 gap-2">
+          <button class="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center hover:bg-gradient-soft hover:text-primary-foreground transition-colors disabled:opacity-30" onclick={() => handlePageChange(page - 1)}><ChevronLeft class="w-5 h-5" /></button>
+          {#each Array.from({ length: totalPages }) as _, i}
+            <button class={cn("w-10 h-10 rounded-full font-mono text-sm transition-all", page === i + 1 ? "bg-gradient-soft text-primary-foreground shadow-lg shadow-primary/20" : "border border-border/50 hover:border-primary/50")} onclick={() => handlePageChange(i + 1)}>{i + 1}</button>
+          {/each}
+          <button class="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center hover:bg-gradient-soft hover:text-primary-foreground transition-colors disabled:opacity-30" onclick={() => handlePageChange(page + 1)}><ChevronRight class="w-5 h-5" /></button>
+        </div>
+      {/if}
+    {/if}
+  </div>
+</section>
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/Stats.svelte:27:11
+Error: Argument of type '() => Promise<() => void>' is not assignable to parameter of type '() => (() => any) | Promise<never>'.
+  Type 'Promise<() => void>' is not assignable to type '(() => any) | Promise<never>'.
+    Type 'Promise<() => void>' is not assignable to type 'Promise<never>'.
+      Type '() => void' is not assignable to type 'never'. (ts)
+
+  onMount(async () => {
+    try {
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/ThemeSwitcher.svelte:210:17
+Warn: Self-closing HTML tags for non-void elements are ambiguous — use `<div ...></div>` rather than `<div ... />`
+https://svelte.dev/e/element_invalid_self_closing_tag (svelte)
+              <div class="flex justify-center space-x-2 mb-6">
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.bg}" />
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.primary}" />
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/ThemeSwitcher.svelte:211:17
+Warn: Self-closing HTML tags for non-void elements are ambiguous — use `<div ...></div>` rather than `<div ... />`
+https://svelte.dev/e/element_invalid_self_closing_tag (svelte)
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.bg}" />
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.primary}" />
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.accent}" />
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/ThemeSwitcher.svelte:212:17
+Warn: Self-closing HTML tags for non-void elements are ambiguous — use `<div ...></div>` rather than `<div ... />`
+https://svelte.dev/e/element_invalid_self_closing_tag (svelte)
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.primary}" />
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.accent}" />
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.foreground}" />
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/lib/components/ThemeSwitcher.svelte:213:17
+Warn: Self-closing HTML tags for non-void elements are ambiguous — use `<div ...></div>` rather than `<div ... />`
+https://svelte.dev/e/element_invalid_self_closing_tag (svelte)
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.accent}" />
+                <div class="w-8 h-8 rounded-full border border-border/50 shadow-inner" style="background-color: {t.colors.foreground}" />
+              </div>
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/routes/+layout.svelte:81:3
+Warn: Unknown at rule @apply (css)
+	:global(h1), :global(h2), :global(h3), :global(h4), :global(h5), :global(h6) {
+		@apply font-headline;
+	}
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/routes/(bare)/admin/+page.svelte:217:17
+Warn: `<svelte:component>` is deprecated in runes mode — components are dynamic by default
+https://svelte.dev/e/svelte_component_deprecated (svelte)
+              <div class="p-3 rounded-xl {tile.bg} transition-colors">
+                <svelte:component this={tile.icon} class="w-6 h-6 {tile.color}" />
+              </div>
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/routes/(bare)/admin/+page.svelte:224:17
+Warn: `<svelte:component>` is deprecated in runes mode — components are dynamic by default
+https://svelte.dev/e/svelte_component_deprecated (svelte)
+              <div class="absolute top-2 right-2">
+                <svelte:component this={activeTile === tile.id ? ChevronUp : ChevronDown} class="w-3.5 h-3.5 text-muted-foreground" />
+              </div>
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/routes/(bare)/admin/+page.svelte:239:19
+Warn: `<svelte:component>` is deprecated in runes mode — components are dynamic by default
+https://svelte.dev/e/svelte_component_deprecated (svelte)
+                <div class="p-2 rounded-lg {tile.bg}">
+                  <svelte:component this={tile.icon} class="w-5 h-5 {tile.color}" />
+                </div>
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/routes/(bare)/admin/+page.svelte:338:17
+Warn: A form label must be associated with a control
+https://svelte.dev/e/a11y_label_has_associated_control (svelte)
+              <div class="space-y-1.5">
+                <label class="text-xs font-bold uppercase tracking-widest text-muted-foreground">Email Address</label>
+                <input
+
+/Users/lkr1/Documents/SMaRT-LaB_website/google_backup/smartlab_website_v1.0/src/routes/(bare)/admin/+page.svelte:347:17
+Warn: A form label must be associated with a control
+https://svelte.dev/e/a11y_label_has_associated_control (svelte)
+              <div class="space-y-1.5">
+                <label class="text-xs font-bold uppercase tracking-widest text-muted-foreground">Initial Password</label>
+                <input
+
+====================================
+svelte-check found 3 errors and 34 warnings in 9 files
