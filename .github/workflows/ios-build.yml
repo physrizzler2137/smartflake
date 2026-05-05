@@ -1,0 +1,36 @@
+name: "Build iOS App"
+
+on:
+  push:
+    branches:
+      - snowflake
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js app
+        run: npm run build
+
+      - name: Sync Capacitor
+        run: npx cap sync ios
+      
+      - name: Build iOS
+        run: |
+          cd ios/App
+          xcodebuild -project App.xcodeproj -scheme App -destination 'generic/platform=iOS' -configuration Debug build CODE_SIGNING_ALLOWED=NO

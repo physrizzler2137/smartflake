@@ -1,0 +1,46 @@
+name: "Build macOS App"
+
+on:
+  push:
+    branches:
+      - snowflake
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  build-tauri:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Tauri app
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: v__VERSION__
+          releaseName: "SMaRT-Lab Desktop v__VERSION__"
+          releaseBody: "Automated cloud build for macOS."
+          releaseDraft: true
+          prerelease: false
+
+      - name: Upload macOS DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: SMaRT-Lab-macOS-DMG
+          path: src-tauri/target/release/bundle/dmg/*.dmg
