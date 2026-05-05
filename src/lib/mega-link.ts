@@ -4,5 +4,6 @@ export function generateMegaProxyUrl(megaUrl: string): string {
   }
   // Use btoa for Base64 encoding on the client-side.
   const encodedUrl = btoa(megaUrl);
-  return `https://mega.wldbs.workers.dev/download?url=${encodedUrl}`;
+  // Local Vite dev server proxy (replaces the dead mega.wldbs.workers.dev worker)
+  return `/api/mega/download?url=${encodedUrl}`;
 }
