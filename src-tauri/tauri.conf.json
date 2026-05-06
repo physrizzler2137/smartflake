@@ -20,7 +20,7 @@
       }
     ],
     "security": {
-      "csp": "default-src 'self'; img-src 'self' https://* tauri: https://mega.wldbs.workers.dev https://placehold.co https://images.unsplash.com https://picsum.photos https://bloggingguide.com https://i.ytimg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https://* wss://*;"
+      "csp": "default-src 'self' * 'unsafe-inline' 'unsafe-eval' data: blob:; img-src * 'unsafe-inline' data: blob:; style-src * 'unsafe-inline'; font-src * data:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline' 'unsafe-eval' data: blob: wss://*;"
     }
   },
   "bundle": {
