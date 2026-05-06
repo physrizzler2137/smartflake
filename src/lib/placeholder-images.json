@@ -3,121 +3,121 @@
     {
       "id": "hero-background",
       "description": "Abstract cybernetic bio-mimicry",
-      "imageUrl": "https://images.unsplash.com/photo-1550745165-9bc0b252726a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNDE5ODJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMG9yZ2FuaWMlMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc3MjE1OTEyOHww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageUrl": "/img/placeholders/hero-background.jpg",
       "imageHint": "organic technology"
     },
     {
       "id": "mission-background",
       "description": "Subtle background for mission section",
-      "imageUrl": "https://images.unsplash.com/photo-1604313890727-5542ff314405?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzY2llbmNlJTIwbGFifGVufDB8fHx8MTc3MTk4NjQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/mission-background.jpg",
       "imageHint": "science lab"
     },
     {
       "id": "piotr-bartkowski",
       "description": "Profile picture for Piotr Bartkowski",
-      "imageUrl": "https://images.unsplash.com/photo-1630959305529-67447c685b9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtYWxlJTIwc2NpZW50aXN0fGVufDB8fHx8MTc3MjA3NTEwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/piotr-bartkowski.jpg",
       "imageHint": "male scientist"
     },
     {
       "id": "lukasz-pawliszak",
       "description": "Profile picture for Łukasz Pawliszak",
-      "imageUrl": "https://images.unsplash.com/photo-1631816289147-8030d6ca1f74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYWxlJTIwcmVzZWFyY2hlcnxlbnwwfHx8fDE3NzIwNzMyNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/lukasz-pawliszak.jpg",
       "imageHint": "male researcher"
     },
     {
       "id": "sabina-sypniewska",
       "description": "Profile picture for Sabina Sypniewska",
-      "imageUrl": "https://images.unsplash.com/photo-1631556761867-50fd6cf7f0bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxmZW1hbGUlMjByZXNlYXJjaGVyfGVufDB8fHx8MTc3MjA3NTEwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/sabina-sypniewska.jpg",
       "imageHint": "female researcher"
     },
     {
       "id": "gozen-ecehan",
       "description": "Profile picture for Gözen Ecehan",
-      "imageUrl": "https://images.unsplash.com/photo-1618355776464-8666794d2520?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBzdHVkZW50fGVufDB8fHx8MTc3MTk1ODI1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/gozen-ecehan.jpg",
       "imageHint": "female student"
     },
     {
       "id": "maja-banasiak",
       "description": "Profile picture for Maja Banasiak",
-      "imageUrl": "https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmZW1hbGUlMjBzdHVkZW50fGVufDB8fHx8MTc3MTk1ODI1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/maja-banasiak.jpg",
       "imageHint": "female student"
     },
     {
       "id": "malgorzata-pieniazek",
       "description": "Profile picture for Małgorzata Pieniążek",
-      "imageUrl": "https://images.unsplash.com/photo-1705753449583-90daa4d7ad91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmZW1hbGUlMjBzdHVkZW50fGVufDB8fHx8MTc3MTk1ODI1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/malgorzata-pieniazek.jpg",
       "imageHint": "female student"
     },
     {
       "id": "zofia-nowicka",
       "description": "Profile picture for Zofia Nowicka",
-      "imageUrl": "https://images.unsplash.com/photo-1580377968562-5f0225d15785?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmZW1hbGUlMjBzY2llbnRpc3R8ZW58MHx8fHwxNzcyMDczMjYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/zofia-nowicka.jpg",
       "imageHint": "female scientist"
     },
     {
       "id": "j-ruiz-lu",
       "description": "Profile picture for J. Ruiz Lu",
-      "imageUrl": "https://placehold.co/200x200/7c3aed/FFFFFF?text=J",
+      "imageUrl": "/img/placeholders/j-ruiz-lu.jpg",
       "imageHint": "initials avatar"
     },
     {
       "id": "sg-chevale",
       "description": "Profile picture for S. G. Chevale",
-      "imageUrl": "https://placehold.co/200x200/d946ef/FFFFFF?text=S",
+      "imageUrl": "/img/placeholders/sg-chevale.jpg",
       "imageHint": "initials avatar"
     },
     {
       "id": "p-pelka",
       "description": "Profile picture for P. Pełka",
-      "imageUrl": "https://placehold.co/200x200/db2777/FFFFFF?text=P",
+      "imageUrl": "/img/placeholders/p-pelka.jpg",
       "imageHint": "initials avatar"
     },
     {
       "id": "h-bukowiecki",
       "description": "Profile picture for H. Bukowiecki",
-      "imageUrl": "https://placehold.co/200x200/16a34a/FFFFFF?text=H",
+      "imageUrl": "/img/placeholders/h-bukowiecki.jpg",
       "imageHint": "initials avatar"
     },
     {
       "id": "p-bomba",
       "description": "Profile picture for P. Bomba",
-      "imageUrl": "https://placehold.co/200x200/0284c7/FFFFFF?text=P",
+      "imageUrl": "/img/placeholders/p-bomba.jpg",
       "imageHint": "initials avatar"
     },
     {
       "id": "fm-gawinski",
       "description": "Profile picture for F. M. Gawiński",
-      "imageUrl": "https://placehold.co/200x200/ea580c/FFFFFF?text=F",
+      "imageUrl": "/img/placeholders/fm-gawinski.jpg",
       "imageHint": "initials avatar"
     },
     {
       "id": "group-photo-1",
       "description": "Group photo of the lab team from 2023",
-      "imageUrl": "https://images.unsplash.com/photo-1581094016071-4715e9a1ae93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyZXNlYXJjaCUyMHRlYW18ZW58MHx8fHwxNzcxOTYxNTc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/group-photo-1.jpg",
       "imageHint": "research team"
     },
     {
       "id": "group-photo-2",
       "description": "Group photo of the lab team from 2021",
-      "imageUrl": "https://images.unsplash.com/photo-1758573466942-fbc45731e6eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzY2llbmNlJTIwZ3JvdXB8ZW58MHx8fHwxNzcyMDczMjYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/group-photo-2.jpg",
       "imageHint": "science group"
     },
     {
       "id": "project-quantum",
       "description": "Visual for Quantum Entanglement project",
-      "imageUrl": "https://images.unsplash.com/photo-1527409335569-f0e5c9a1fa707?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxxdWFudHVtJTIwcGh5c2ljc3xlbnwwfHx8fDE3NzIwNzMyNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/project-quantum.jpg",
       "imageHint": "quantum physics"
     },
     {
       "id": "project-nanobots",
       "description": "Visual for Nanobotics project",
-      "imageUrl": "https://images.unsplash.com/photo-1660777448122-be10dba634d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxuYW5vdGVjaG5vbG9neSUyMG1lZGljYWx8ZW58MHx8fHwxNzcyMDczMjYxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/project-nanobots.jpg",
       "imageHint": "nanotechnology medical"
     },
     {
       "id": "project-genomes",
       "description": "Visual for Genomic Sequencing project",
-      "imageUrl": "https://images.unsplash.com/photo-1638537637620-6cde80ac3248?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkbmElMjBzZXF1ZW5jZXxlbnwwfHx8fDE3NzIwNzMyNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/project-genomes.jpg",
       "imageHint": "dna sequence"
     },
     {
@@ -144,271 +144,271 @@
     {
       "id": "equipment-corrtest",
       "description": "Corrtest Instruments CS35M",
-      "imageUrl": "https://images.unsplash.com/photo-1518152006812-edab29b069ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsYWIlMjBlcXVpcG1lbnR8ZW58MHx8fHwxNzcyMjQxNDk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/equipment-corrtest.jpg",
       "imageHint": "lab equipment"
     },
     {
       "id": "equipment-shimadzu",
       "description": "Shimadzu EZ-LX tensile jig",
-      "imageUrl": "https://images.unsplash.com/photo-1628232717289-43d9354e6361?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYXRlcmlhbHMlMjB0ZXN0aW5nJTIwbWFjaGluZXxlbnwwfHx8fDE3NzIyNDYwOTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/equipment-shimadzu.jpg",
       "imageHint": "tensile testing"
     },
     {
       "id": "equipment-dantec",
       "description": "Dantec DIC system",
-      "imageUrl": "https://images.unsplash.com/photo-1763198302090-76a6ca09ebd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbWFnaW5nJTIwc3lzdGVtfGVufDB8fHx8MTc3MjI0MTQ5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/equipment-dantec.jpg",
       "imageHint": "imaging system"
     },
     {
       "id": "equipment-flir",
       "description": "FLIR AX00 thermal imaging camera",
-      "imageUrl": "https://images.unsplash.com/photo-1559645147-bbd3634fcd8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0aGVybWFsJTIwY2FtZXJhfGVufDB8fHx8MTc3MjI0MTQ5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/equipment-flir.jpg",
       "imageHint": "thermal camera"
     },
     {
       "id": "equipment-magcam",
       "description": "Magcam Combi scanner",
-      "imageUrl": "https://images.unsplash.com/photo-1616957694757-31fb9f8fa2c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYWduZXRpYyUyMHNjYW5uZXJ8ZW58MHx8fHwxNzcyMjQxNDk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/equipment-magcam.jpg",
       "imageHint": "magnetic scanner"
     },
     {
       "id": "equipment-leica",
       "description": "Leica M205A microscope",
-      "imageUrl": "https://images.unsplash.com/photo-1647083701183-6f66d6b48174?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtaWNyb3Njb3BlfGVufDB8fHx8MTc3MjI0MTQ5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/equipment-leica.jpg",
       "imageHint": "microscope"
     },
     {
       "id": "equipment-rigol",
       "description": "Rigol Multimeters",
-      "imageUrl": "https://images.unsplash.com/photo-1628258334105-2a0b3d6ef5f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNDE5ODJ8MHwxfHNlYXJjaHwxfHxtdWx0aW1ldGVyfGVufDB8fHx8MTc3MzA5MTAyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/img/placeholders/equipment-rigol.jpg",
       "imageHint": "multimeter"
     },
     {
       "id": "absurd-news-1",
       "description": "Soft robot wearing tiny academic cap",
-      "imageUrl": "https://picsum.photos/seed/as1/600/400",
+      "imageUrl": "/img/placeholders/absurd-news-1.jpg",
       "imageHint": "soft robot academic"
     },
     {
       "id": "absurd-news-2",
       "description": "Swarm of glowing nanostructures holding tiny red pens",
-      "imageUrl": "https://picsum.photos/seed/as2/600/400",
+      "imageUrl": "/img/placeholders/absurd-news-2.jpg",
       "imageHint": "glowing nanostructures"
     },
     {
       "id": "absurd-news-3",
       "description": "Soft robot playing a grand piano",
-      "imageUrl": "https://picsum.photos/seed/as3/600/400",
+      "imageUrl": "/img/placeholders/absurd-news-3.jpg",
       "imageHint": "robot piano"
     },
     {
       "id": "absurd-news-4",
       "description": "Flexible battery doing yoga poses",
-      "imageUrl": "https://picsum.photos/seed/as4/600/400",
+      "imageUrl": "/img/placeholders/absurd-news-4.jpg",
       "imageHint": "battery yoga"
     },
     {
       "id": "absurd-news-5",
       "description": "Graphene strip shaped like a tiny umbrella",
-      "imageUrl": "https://picsum.photos/seed/as5/600/400",
+      "imageUrl": "/img/placeholders/absurd-news-5.jpg",
       "imageHint": "graphene umbrella"
     },
     {
       "id": "absurd-news-6",
       "description": "Magnets arranged in a circle like a debating society",
-      "imageUrl": "https://picsum.photos/seed/as6/600/400",
+      "imageUrl": "/img/placeholders/absurd-news-6.jpg",
       "imageHint": "magnets circle"
     },
     {
       "id": "absurd-news-7",
       "description": "Liquid metal forming a glowing impossible object",
-      "imageUrl": "https://picsum.photos/seed/as7/600/400",
+      "imageUrl": "/img/placeholders/absurd-news-7.jpg",
       "imageHint": "liquid metal"
     },
     {
       "id": "absurd-news-8",
       "description": "Soft robot camouflaged among trees",
-      "imageUrl": "https://picsum.photos/seed/as8/600/400",
+      "imageUrl": "/img/placeholders/absurd-news-8.jpg",
       "imageHint": "robot camouflage"
     },
     {
       "id": "project-robot-taste",
       "description": "A soft robotic gripper looking sceptically at a lab sample.",
-      "imageUrl": "https://picsum.photos/seed/rh1/600/400",
+      "imageUrl": "/img/placeholders/project-robot-taste.jpg",
       "imageHint": "robot arm"
     },
     {
       "id": "project-wearable-sleeve",
       "description": "A futuristic sleeve hugging an arm tightly.",
-      "imageUrl": "https://picsum.photos/seed/rh2/600/400",
+      "imageUrl": "/img/placeholders/project-wearable-sleeve.jpg",
       "imageHint": "wearable technology"
     },
     {
       "id": "project-dancing-robot",
       "description": "A soft robot dancing to jazz music.",
-      "imageUrl": "https://picsum.photos/seed/rh3/600/400",
+      "imageUrl": "/img/placeholders/project-dancing-robot.jpg",
       "imageHint": "dancing robot"
     },
     {
       "id": "project-nano-messages",
       "description": "Microscopic nanostructures spelling out 'Really?'.",
-      "imageUrl": "https://picsum.photos/seed/rh4/600/400",
+      "imageUrl": "/img/placeholders/project-nano-messages.jpg",
       "imageHint": "nanostructures text"
     },
     {
       "id": "project-art-printer",
       "description": "An ink jetting system creating abstract art instead of schematics.",
-      "imageUrl": "https://picsum.photos/seed/rh5/600/400",
+      "imageUrl": "/img/placeholders/project-art-printer.jpg",
       "imageHint": "printer art"
     },
     {
       "id": "project-nano-weather",
       "description": "Magnetic nanostructures forming a sun shape.",
-      "imageUrl": "https://picsum.photos/seed/rh6/600/400",
+      "imageUrl": "/img/placeholders/project-nano-weather.jpg",
       "imageHint": "nanostructures weather"
     },
     {
       "id": "project-angry-battery",
       "description": "A battery that seems to have an angry face on it.",
-      "imageUrl": "https://picsum.photos/seed/rh7/600/400",
+      "imageUrl": "/img/placeholders/project-angry-battery.jpg",
       "imageHint": "battery face"
     },
     {
       "id": "project-stubborn-actuator",
       "description": "A robotic arm that looks like it's refusing to move.",
-      "imageUrl": "https://picsum.photos/seed/rh8/600/400",
+      "imageUrl": "/img/placeholders/project-stubborn-actuator.jpg",
       "imageHint": "robot arm"
     },
     {
       "id": "project-stressed-material",
       "description": "A piece of material with cracks appearing on it, with a calendar in the background.",
-      "imageUrl": "https://picsum.photos/seed/rh9/600/400",
+      "imageUrl": "/img/placeholders/project-stressed-material.jpg",
       "imageHint": "cracked material"
     },
     {
       "id": "project-robot-union",
       "description": "A group of small soft robots holding tiny protest signs.",
-      "imageUrl": "https://picsum.photos/seed/rh10/600/400",
+      "imageUrl": "/img/placeholders/project-robot-union.jpg",
       "imageHint": "robot protest"
     },
     {
       "id": "project-floppy-structure",
       "description": "A structure that is completely limp and floppy.",
-      "imageUrl": "https://picsum.photos/seed/rh11/600/400",
+      "imageUrl": "/img/placeholders/project-floppy-structure.jpg",
       "imageHint": "limp structure"
     },
     {
       "id": "project-polite-sensor",
       "description": "A wearable sensor with a speech bubble asking 'Please?'.",
-      "imageUrl": "https://picsum.photos/seed/rh12/600/400",
+      "imageUrl": "/img/placeholders/project-polite-sensor.jpg",
       "imageHint": "sensor speech"
     },
     {
       "id": "project-graphene-stars",
       "description": "Laser-Induced Graphene pathways forming the shape of constellations.",
-      "imageUrl": "https://picsum.photos/seed/rh13/600/400",
+      "imageUrl": "/img/placeholders/project-graphene-stars.jpg",
       "imageHint": "graphene constellations"
     },
     {
       "id": "project-screaming-parachute",
       "description": "A parachute with a cartoon screaming face on it.",
-      "imageUrl": "https://picsum.photos/seed/rh14/600/400",
+      "imageUrl": "/img/placeholders/project-screaming-parachute.jpg",
       "imageHint": "parachute face"
     },
     {
       "id": "project-anxious-sensor",
       "description": "A sweat sensor showing a high reading next to a pile of books.",
-      "imageUrl": "https://picsum.photos/seed/rh15/600/400",
+      "imageUrl": "/img/placeholders/project-anxious-sensor.jpg",
       "imageHint": "sensor books"
     },
     {
       "id": "project-grumpy-magnets",
       "description": "Two soft magnets turned away from each other as if they are angry.",
-      "imageUrl": "https://picsum.photos/seed/rh16/600/400",
+      "imageUrl": "/img/placeholders/project-grumpy-magnets.jpg",
       "imageHint": "angry magnets"
     },
     {
       "id": "project-mug-morph",
       "description": "A shape-shifting structure looking like a coffee mug.",
-      "imageUrl": "https://picsum.photos/seed/rh17/600/400",
+      "imageUrl": "/img/placeholders/project-mug-morph.jpg",
       "imageHint": "morphing mug"
     },
     {
       "id": "project-vibrating-gel",
       "description": "A magnetic gel that is visibly vibrating.",
-      "imageUrl": "https://picsum.photos/seed/rh18/600/400",
+      "imageUrl": "/img/placeholders/project-vibrating-gel.jpg",
       "imageHint": "vibrating gel"
     },
     {
       "id": "project-liquid-geometry",
       "description": "Liquid metal forming an impossible geometric shape.",
-      "imageUrl": "https://picsum.photos/seed/rh19/600/400",
+      "imageUrl": "/img/placeholders/project-liquid-geometry.jpg",
       "imageHint": "liquid metal"
     },
     {
       "id": "project-shy-robots",
       "description": "The backs of several soft robots as they face a wall.",
-      "imageUrl": "https://picsum.photos/seed/rh20/600/400",
+      "imageUrl": "/img/placeholders/project-shy-robots.jpg",
       "imageHint": "shy robots"
     },
     {
       "id": "project-chaotic-polymer",
       "description": "A swirling, chaotic-looking polymer under a microscope.",
-      "imageUrl": "https://picsum.photos/seed/rh21/600/400",
+      "imageUrl": "/img/placeholders/project-chaotic-polymer.jpg",
       "imageHint": "chaotic polymer"
     },
     {
       "id": "project-absent-morph",
       "description": "An empty laboratory with a structure moving on its own in the background.",
-      "imageUrl": "https://picsum.photos/seed/rh22/600/400",
+      "imageUrl": "/img/placeholders/project-absent-morph.jpg",
       "imageHint": "empty lab"
     },
     {
       "id": "project-coffee-robot",
       "description": "A biomimetic robot trying to use a coffee machine in a lounge.",
-      "imageUrl": "https://picsum.photos/seed/rh23/600/400",
+      "imageUrl": "/img/placeholders/project-coffee-robot.jpg",
       "imageHint": "robot coffee"
     },
     {
       "id": "project-vanishing-patterns",
       "description": "Intricate, beautiful patterns on a material that seem to glow.",
-      "imageUrl": "https://picsum.photos/seed/rh24/600/400",
+      "imageUrl": "/img/placeholders/project-vanishing-patterns.jpg",
       "imageHint": "glowing patterns"
     },
     {
       "id": "history-founded",
       "description": "An empty but hopeful laboratory space",
-      "imageUrl": "https://picsum.photos/seed/hist1/600/400",
+      "imageUrl": "/img/placeholders/history-founded.jpg",
       "imageHint": "empty laboratory"
     },
     {
       "id": "history-grant",
       "description": "A person signing a formal document or grant paper",
-      "imageUrl": "https://picsum.photos/seed/hist2/600/400",
+      "imageUrl": "/img/placeholders/history-grant.jpg",
       "imageHint": "signing document"
     },
     {
       "id": "history-nanotech",
       "description": "Abstract visualization of nanotechnology",
-      "imageUrl": "https://picsum.photos/seed/hist3/600/400",
+      "imageUrl": "/img/placeholders/history-nanotech.jpg",
       "imageHint": "nanotechnology abstract"
     },
     {
       "id": "history-expansion",
       "description": "A modern, newly built laboratory facility",
-      "imageUrl": "https://picsum.photos/seed/hist4/600/400",
+      "imageUrl": "/img/placeholders/history-expansion.jpg",
       "imageHint": "modern laboratory"
     },
     {
       "id": "history-spin-off",
       "description": "A small group in a new modern office, celebrating",
-      "imageUrl": "https://picsum.photos/seed/hist5/600/400",
+      "imageUrl": "/img/placeholders/history-spin-off.jpg",
       "imageHint": "startup celebration"
     },
     {
       "id": "history-ai",
       "description": "An abstract representation of an AI brain or network",
-      "imageUrl": "https://picsum.photos/seed/hist6/600/400",
+      "imageUrl": "/img/placeholders/history-ai.jpg",
       "imageHint": "ai network"
     }
   ]
