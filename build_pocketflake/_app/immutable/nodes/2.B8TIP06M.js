@@ -1,0 +1,1 @@
+import{a as s,f as t}from"../chunks/DutuRElT.js";import{c as n,r as i}from"../chunks/h-L6tEcW.js";import{s as d}from"../chunks/Bp0S_-C7.js";var m=t('<div class="min-h-screen bg-background text-foreground break-words"><!></div>');function v(o,a){var r=m(),e=n(r);d(e,()=>a.children),i(r),s(o,r)}export{v as component};

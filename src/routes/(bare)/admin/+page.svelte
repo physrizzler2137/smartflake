@@ -28,12 +28,6 @@
   let isAddingNew = $state(false);
   let isSaving = $state(false);
 
-  // ─── User Management State ───────────────────────────────────────────────────
-  let newUserEmail = $state('');
-  let newUserPassword = $state('');
-  let isCreatingUser = $state(false);
-  let showNewUserPanel = $state(false);
-  let userCreateResult = $state<string | null>(null);
 
   // ─── CMS Tiles Config ────────────────────────────────────────────────────────
   const tiles = [
@@ -267,29 +261,6 @@
     return str.length > 60 ? str.substring(0, 60) + '…' : str;
   }
 
-  // ─── User Management ──────────────────────────────────────────────────────────
-  async function createUser() {
-    if (!newUserEmail || !newUserPassword) return;
-    isCreatingUser = true;
-    userCreateResult = null;
-
-    try {
-      await pb.collection('users').create({
-        email: newUserEmail.trim(),
-        password: newUserPassword,
-        passwordConfirm: newUserPassword,
-        role: 'admin'
-      });
-      
-      userCreateResult = `✓ User ${newUserEmail} created. They may need to confirm their email.`;
-      newUserEmail = '';
-      newUserPassword = '';
-    } catch (e: any) {
-      userCreateResult = `Error: ${e.message}`;
-    } finally {
-      isCreatingUser = false;
-    }
-  }
 </script>
 
 <svelte:head>
@@ -383,11 +354,11 @@
       </section>
 
       {#if activeTile}
+        {@const tile = tiles.find(t => t.id === activeTile)}
         <section class="mb-12" in:slide={{ duration: 400 }}>
           <div class="bg-card/40 backdrop-blur-sm border border-border/50 rounded-3xl overflow-hidden shadow-2xl">
             <div class="flex flex-col md:flex-row md:items-center justify-between p-8 border-b border-border/50 bg-primary/5">
               <div class="flex items-center gap-4 mb-4 md:mb-0">
-                {@const tile = tiles.find(t => t.id === activeTile)}
                 <div class="p-3 rounded-2xl {tile?.bg}">
                   {#if tile}
                     <svelte:component this={tile.icon} class="w-6 h-6 {tile.color}" />
@@ -617,76 +588,6 @@
         </section>
       {/if}
 
-      <section class="mb-12">
-        <div class="flex items-center justify-between mb-8">
-          <div>
-            <h2 class="font-slab text-2xl font-bold text-foreground tracking-tight">User Management</h2>
-            <p class="text-xs text-muted-foreground uppercase tracking-widest font-bold mt-1">Access Control</p>
-          </div>
-          <button
-            class="flex items-center gap-2 text-sm bg-primary text-primary-foreground font-bold px-6 py-3 rounded-2xl hover:bg-primary/90 transition-all hover:scale-[1.02]"
-            onclick={() => { showNewUserPanel = !showNewUserPanel; userCreateResult = null; }}
-          >
-            <UserPlus class="w-5 h-5" />
-            Add Admin
-          </button>
-        </div>
-
-        {#if showNewUserPanel}
-          <div class="bg-card/40 backdrop-blur-sm border border-border/50 rounded-3xl p-8 mb-10 shadow-xl" transition:slide={{ duration: 300 }}>
-            <h3 class="font-slab font-bold text-xl mb-6 flex items-center gap-3">
-              <UserPlus class="w-5 h-5 text-primary" />
-              Create New Admin Account
-            </h3>
-            <div class="grid sm:grid-cols-2 gap-6 mb-6">
-              <div class="space-y-2">
-                <label class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground ml-1">Email Address</label>
-                <input
-                  type="email"
-                  bind:value={newUserEmail}
-                  placeholder="user@smartlab.simr.pw.edu.pl"
-                  class="w-full bg-background/50 border border-border/50 rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
-                />
-              </div>
-              <div class="space-y-2">
-                <label class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground ml-1">Initial Password</label>
-                <input
-                  type="password"
-                  bind:value={newUserPassword}
-                  placeholder="Minimum 6 characters"
-                  class="w-full bg-background/50 border border-border/50 rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm"
-                />
-              </div>
-            </div>
-            {#if userCreateResult}
-              <p class="text-sm mb-6 px-4 py-3 rounded-xl {userCreateResult.startsWith('✓') ? 'bg-green-500/10 text-green-400' : 'bg-destructive/10 text-destructive'}" in:fade>
-                {userCreateResult}
-              </p>
-            {/if}
-            <div class="flex justify-end gap-4">
-              <button 
-                class="px-8 py-3 rounded-2xl font-bold text-sm border border-border/50 hover:bg-muted transition-all"
-                onclick={() => showNewUserPanel = false}
-              >
-                Cancel
-              </button>
-              <button
-                onclick={createUser}
-                disabled={isCreatingUser || !newUserEmail || !newUserPassword}
-                class="flex items-center gap-2 bg-primary text-primary-foreground font-bold px-10 py-3 rounded-2xl hover:bg-primary/90 transition-all disabled:opacity-50"
-              >
-                {#if isCreatingUser}
-                  <Loader2 class="w-5 h-5 animate-spin" />
-                  Creating...
-                {:else}
-                  <UserPlus class="w-5 h-5" />
-                  Create User
-                {/if}
-              </button>
-            </div>
-          </div>
-        {/if}
-      </section>
 
       <section>
         <h2 class="font-slab text-xl font-semibold mb-6 text-foreground/80">System Management</h2>
