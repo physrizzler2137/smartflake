@@ -2,7 +2,9 @@
   import { onMount } from 'svelte';
   import { fly, fade } from 'svelte/transition';
   import { pb } from '$lib/pocketbase';
+  import { teamMembers } from '$lib/data';
   import { Users, GraduationCap, Camera, Loader2 } from 'lucide-svelte';
+  import placeholderData from '$lib/placeholder-images.json';
 
   interface TeamMember {
     id: string;
@@ -58,8 +60,39 @@
         pb.collection('group_photos').getFullList({ sort: '-year' })
       ]);
       
-      if (membersRes) members = membersRes as unknown as TeamMember[];
-      if (photosRes) groupPhotos = photosRes as unknown as GroupPhoto[];
+      if (membersRes && membersRes.length > 0) {
+        members = membersRes as unknown as TeamMember[];
+      } else {
+        // Fallback members
+        members = teamMembers.map((m, i) => {
+          const names = m.name.split(' ');
+          const first = names[0];
+          const last = names.slice(1).join(' ');
+          return {
+            id: `static-${i}`,
+            first_name: first,
+            last_name: last,
+            role: m.role,
+            bio: m.bio,
+            image_url: m.image || null,
+            image_url_hover: m.imageHover || null,
+            image_position: 'center',
+            is_active: true,
+            end_year: null,
+            display_order: i
+          };
+        });
+      }
+      
+      if (photosRes && photosRes.length > 0) {
+        groupPhotos = photosRes as unknown as GroupPhoto[];
+      } else {
+        // Fallback group photos
+        groupPhotos = [
+          { id: 'g1', year: 2026, image_url: '/img/groups/group_2026.jpg', image_position: 'center' },
+          { id: 'g2', year: 2024, image_url: '/img/groups/group_2024.jpg', image_position: 'center' }
+        ];
+      }
     } catch (e) {
       console.error("Error fetching team data:", e);
     } finally {

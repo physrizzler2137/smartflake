@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { fly } from 'svelte/transition';
   import { pb } from '$lib/pocketbase';
+  import { staticPublications } from '$lib/data';
   import { BookMarked, ExternalLink, Loader2 } from 'lucide-svelte';
 
   interface Publication {
@@ -41,9 +42,15 @@
         sort: '-year',
       });
         
-      if (data) publications = data as unknown as Publication[];
+      if (data && data.length > 0) {
+        publications = data as unknown as Publication[];
+      } else {
+        // Fallback to static data
+        publications = staticPublications as any;
+      }
     } catch (e) {
       console.error("Error fetching publications:", e);
+      publications = staticPublications as any;
     } finally {
       isLoading = false;
     }

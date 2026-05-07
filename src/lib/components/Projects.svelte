@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { fade, fly } from 'svelte/transition';
   import { pb } from '$lib/pocketbase';
+  import { staticProjects } from '$lib/data';
   import { Lightbulb, Calendar, Landmark, Banknote, ExternalLink, Loader2 } from 'lucide-svelte';
 
   interface Project {
@@ -26,9 +27,15 @@
         sort: '-start_date',
       });
         
-      if (data) projects = data as unknown as Project[];
+      if (data && data.length > 0) {
+        projects = data as unknown as Project[];
+      } else {
+        // Fallback to static data
+        projects = staticProjects as any;
+      }
     } catch (e) {
       console.error("Error fetching projects:", e);
+      projects = staticProjects as any;
     } finally {
       isLoading = false;
     }
