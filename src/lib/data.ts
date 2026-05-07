@@ -1,13 +1,13 @@
 export const navLinks = [
-  { name: 'News', href: '#news' },
-  { name: 'History', href: '#history' },
-  { name: 'Facilities', href: '#facilities' },
-  { name: 'Team', href: '#team' },
-  { name: 'Highlights', href: '#highlights' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Publications', href: '#publications' },
-  { name: 'Stats', href: '#stats' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'News', href: '/#news' },
+  { name: 'History', href: '/#history' },
+  { name: 'Facilities', href: '/#facilities' },
+  { name: 'Team', href: '/#team' },
+  { name: 'Highlights', href: '/#highlights' },
+  { name: 'Projects', href: '/#projects' },
+  { name: 'Publications', href: '/#publications' },
+  { name: 'Stats', href: '/#stats' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export const facilities = [

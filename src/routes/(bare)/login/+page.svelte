@@ -3,6 +3,7 @@
   import { fade, fly } from 'svelte/transition';
   import { pb } from '$lib/pocketbase';
   import { goto } from '$app/navigation';
+  import Navigation from '$lib/components/Navigation.svelte';
 
   let email = $state('admin@smartlab.simr.pw.edu.pl');
   let password = $state('');
@@ -37,13 +38,9 @@
   <title>Admin Login | SMaRT-Lab</title>
 </svelte:head>
 
-<div class="min-h-screen bg-background flex flex-col items-center justify-center p-6">
-  <div class="absolute top-8 left-8">
-    <a href="/" class="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-      <ArrowLeft class="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-      Back to Home
-    </a>
-  </div>
+<Navigation forceScrolled={true} />
+
+<div class="min-h-screen bg-background flex flex-col items-center justify-center p-6 pt-32">
 
   <div 
     class="w-full max-w-md bg-card border border-border/50 rounded-2xl shadow-2xl overflow-hidden"
