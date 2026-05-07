@@ -27,12 +27,25 @@
         sort: '-start_date',
       });
         
-      if (data && data.length > 0) {
-        projects = data as unknown as Project[];
-      } else {
-        // Fallback to static data
-        projects = staticProjects as any;
-      }
+      const dbProjects = (data as unknown as Project[]) || [];
+      const mergedProjects = [...dbProjects];
+
+      // Add static projects that aren't already in the DB
+      staticProjects.forEach(staticProj => {
+        const exists = dbProjects.some(dbProj => 
+          dbProj.title.toLowerCase().trim() === staticProj.title.toLowerCase().trim()
+        );
+        if (!exists) {
+          mergedProjects.push({
+            ...staticProj,
+            description: `A research project focused on ${staticProj.title.toLowerCase()}.`
+          } as any);
+        }
+      });
+
+      projects = mergedProjects.sort((a, b) => 
+        new Date(b.start_date).getTime() - new Date(a.start_date).getTime()
+      );
     } catch (e) {
       console.error("Error fetching projects:", e);
       projects = staticProjects as any;
