@@ -11,6 +11,28 @@
   let error = $state<string | null>(null);
   let showPassword = $state(false);
 
+  async function handleSignUp() {
+    if (!password) {
+      error = 'Please enter a password to register.';
+      return;
+    }
+    isLoading = true;
+    error = null;
+    try {
+      await pb.collection('users').create({
+        email: email.trim(),
+        password: password,
+        passwordConfirm: password,
+        role: 'admin'
+      });
+      error = 'Account created! You can now sign in.';
+    } catch (e: any) {
+      error = e?.message || 'An unexpected error occurred.';
+    } finally {
+      isLoading = false;
+    }
+  }
+
   async function handleLogin(e: Event) {
     e.preventDefault();
     isLoading = true;
@@ -101,18 +123,29 @@
         </div>
       </div>
 
-      <button 
-        type="submit"
-        disabled={isLoading}
-        class="w-full bg-primary text-primary-foreground font-bold py-4 rounded-xl shadow-lg shadow-primary/20 hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
-      >
-        {#if isLoading}
-          <Loader2 class="w-5 h-5 animate-spin" />
-          Signing in...
-        {:else}
-          Sign In
-        {/if}
-      </button>
+      <div class="flex flex-col gap-3">
+        <button 
+          type="submit"
+          disabled={isLoading}
+          class="w-full bg-primary text-primary-foreground font-bold py-4 rounded-xl shadow-lg shadow-primary/20 hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
+        >
+          {#if isLoading}
+            <Loader2 class="w-5 h-5 animate-spin" />
+            Processing...
+          {:else}
+            Sign In
+          {/if}
+        </button>
+
+        <button 
+          type="button"
+          disabled={isLoading}
+          onclick={handleSignUp}
+          class="w-full bg-secondary/10 text-secondary-foreground font-bold py-4 rounded-xl hover:bg-secondary/20 transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+        >
+          Create Admin Account (First-time setup)
+        </button>
+      </div>
     </form>
   </div>
 </div>
