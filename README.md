@@ -21,6 +21,11 @@ npm run build
 npm run tauri build
 ```
 
+### 4. Running with Docker
+```sh
+docker-compose up --build
+```
+
 ## 📂 Project Architecture
 
 - **Branches**:
@@ -29,12 +34,14 @@ npm run tauri build
 - **Image Assets**: Optimized web assets (WebP) are located in `static/img/`. These are tracked in Git to ensure consistent bundling across native builds.
 - **Logotype Animation**: Custom "piston-like" animation logic defined in `tailwind.config.ts`.
 
+## 📦 Current Versions
+- **Snowflake**: v0.3.3 (Supabase Infrastructure)
+- **Pocketflake**: v0.4.2 (PocketBase Infrastructure)
+
 ## 🛠 Tooling
 
 - **Image Optimizer**: `python3 pictoolkit/optimize-images.py`
 - **Mega Downloader**: `node pictoolkit/download-mega.mjs`
 
 ---
----
-*Maintained by SMaRT-Lab Team. Current Version: v0.4.1 (Pocketflake) / v0.3.1 (Snowflake).*
-
+*Maintained by SMaRT-Lab Team.*
