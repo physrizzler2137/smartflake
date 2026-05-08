@@ -35,4 +35,6 @@ npm run tauri build
 - **Mega Downloader**: `node pictoolkit/download-mega.mjs`
 
 ---
-*Maintained by SMaRT-Lab Team.*
+---
+*Maintained by SMaRT-Lab Team. Current Version: v0.4.1 (Pocketflake) / v0.3.1 (Snowflake).*
+
