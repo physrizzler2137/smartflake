@@ -1,20 +1,19 @@
-# SMaRT-Lab "Flake" System
-### Standardized Material and Robotics Technology - Laboratory
-The SMaRT-Lab "Flake" system is a modular architecture for deploying laboratory management software across different infrastructure backends.
+# SMaRT-Lab Website
+**Smart Materials and Soft Robotics Laboratory**
 
----
+The SMaRT-Lab website built with SvelteKit, supporting multiple database backends (Supabase and PocketBase).
 
-## Editions
+## Available Versions
 
-### Supaflake
+### Supabase Version
 - **Backend**: Supabase Cloud / Self-hosted Supabase.
-- - **Features**: Centralized auth, PostgreSQL database, and cloud storage.
+- - **Features**: Centralized authentication, PostgreSQL database, and cloud storage.
  
-  - ### Pocketflake
+  - ### PocketBase Version
   - - **Backend**: PocketBase (Embedded SQLite).
     - - **Features**: Zero-dependency, single-binary execution. Ideal for local/offline labs.
      
-      - ### Dokeaflake
+      - ### Docker Version
       - - **Backend**: PocketBase + SvelteKit in a single Docker container.
         - - **Features**: One-click deployment for IT departments.
          
