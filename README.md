@@ -1,9 +1,24 @@
-# 📦 SMaRT-LaB Releases
+# SMaRT-Lab "Flake" System
+**Standardized Material and Robotics Technology - Laboratory**
 
-This repository is dedicated to binary releases and distribution artifacts for the SMaRT-LaB website.
+The SMaRT-Lab "Flake" system is a modular architecture for deploying laboratory management software across different infrastructure backends.
 
-### 🚀 Available Branches
-- **Snowflake**: Production container builds
-- **Pocketflake**: Standalone local server builds
+---
 
-Visit the [main repository](https://github.com/physrizzler2137/smartlab-website) for source code.
+## Editions
+
+### Supaflake
+- **Backend**: Supabase Cloud / Self-hosted Supabase.
+- - **Features**: Centralized auth, PostgreSQL database, and cloud storage.
+ 
+  - ### Pocketflake
+  - - **Backend**: PocketBase (Embedded SQLite).
+    - - **Features**: Zero-dependency, single-binary execution. Ideal for local/offline labs.
+     
+      - ### Dokeaflake
+      - - **Backend**: PocketBase + SvelteKit in a single Docker container.
+        - - **Features**: One-click deployment for IT departments.
+         
+          - ---
+          **Version**: v0.4.2
+          *Maintained by the SMaRT-Lab Team.*
